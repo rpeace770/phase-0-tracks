@@ -4,7 +4,7 @@
 
 * What is version control?  Why is it useful?
 
-Version Control is the process of updating files and saving those updates frequently. This makes sure you can go back and find specific updates to see if there is a bug. It's also useful when you can have a team working on a project together. Version control helps keep the master branch in perfect condition while each member works on improving different sections.
+Took out this section.
 
 * What is a branch and why would you use one?
 

@@ -5,7 +5,8 @@
 	<meta charset = "utf-8">
 </head>
 <body>
-<form action = "success.html" method = "post">
+<header><h1>Movie Form</h1></header>
+<form name = "movie" action = "success.html" method = "post">
 	<div>
 		<label>What movie genre is your favorite?</label>
 		<select name = "genre">
@@ -22,15 +23,36 @@
 	</div>
 	<br>
 	<div>
-		<label>How would you rate your favorite movie?</label>
-		<input type = "radio" name = "choice_1"> 5
-		<input type = "radio" name = "choice_2"> 4
-		<input type = "radio" name = "choice_3"> 3
-		<input type = "radio" name = "choice_4"> 2
-		<input type = "radio" name = "choice_5"> 1
-
+		<fieldset>
+			<legend>How would you rate your favorite movie?</legend>
+				<p><input type = "radio" name = "choice_1"> Excellent</p>
+				<p><input type = "radio" name = "choice_2"> Great</p>
+				<p><input type = "radio" name = "choice_3"> Good</p>
+				<p><input type = "radio" name = "choice_4"> Fair</p>
+				<p><input type = "radio" name = "choice_5"> Poor</p>
+		</fieldset>
 	</div>
-
+	<br>
+	<div>
+		<textarea name = "comments" cols = "100" rows = "10" placeholder = "Enter any additional comments about your movie..."></textarea>
+	</div>
+	<br>
+	<div>
+		<input type = "checkbox" name = "agree" required>This is your final answer!!! (check to confirm)
+	</div>
+	<br>
+	<div>
+	<button type = "submit" name = "submit">Submit my movie!</button>
+	</div>
 </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

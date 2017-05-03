@@ -5,11 +5,13 @@
 }
 
 #glasses {
-	margin: 250px 0px 0px 590px;
+	top: 256px;
+	left: 600px;
 	position: absolute;
 }
 
 #hat {
 	position: absolute;
-	margin: 200px 0px 0px 550px;
+	top: 90px;
+	left: 540px;
 }

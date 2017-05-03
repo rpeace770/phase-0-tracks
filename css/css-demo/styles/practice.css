@@ -12,3 +12,7 @@
 .accomplishments {
 	font-size: .8em;
 }
+
+section.job li:first-child {
+	color: blue;
+}

@@ -13,6 +13,7 @@ main {
   width: 79%;
   display: inline-block;
   min-width: 300px;
+  margin: auto;
 }
 
 blockquote {

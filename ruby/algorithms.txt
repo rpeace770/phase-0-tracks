@@ -1,0 +1,30 @@
+Algorithm for Using the Elevator
+
+Read the floor map before going to the elevator.
+Save the floor number that matches the place you are visiting.
+If the floor number is higher than the current floor, press the up arrow.
+If the floor number is lower than the current floor, press the down arrow.
+If the floor is letter L, press the up arrow.
+Wait for the doors to open and enter the elevator.
+Read the number buttons starting from the top left. Move left to right and up to down.
+When the saved floor number equals the button number, press that button.
+Stay on the elevator while the doors close.
+When the door opens, read the number on the doorway to the elevator.
+If the doorway number matches the saved number, step out of the elevator.
+If the doorway number does not match the saved number, stay on the elevator and repeat the step above.
+Repeat all the steps above when using the elevator.
+
+Algorithm for Making the Bed
+
+Take the pillows off the bed and set on the floor.
+Pull the top cover off the bed and set on the floor.
+Take the next sheet off the bed, but continue to hold in your hands.
+Face the bed and lay the sheet on the top of the bed with the longer sides on the left and right of the bed.
+Pull the corners outwards until the sheet is flat.
+Adjust the placement of the sheet until each side evenly hangs off the side of the bed.
+Tuck the sheet under the mattress on one short side of the bed.
+Place the pillows on top of the mattress on the opposite side of the tucked in sheet.
+Take the top cover in your hands.
+Face the bed and lay the cover on the top of the bed with the longer sides on the left and right of the bed.
+Pull the corners outwards until the cover is flat.
+Adjust the placement of the cover until each side evenly hangs off the side of the bed.

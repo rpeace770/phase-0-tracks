@@ -1,0 +1,99 @@
+header {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  border: 3px dotted black;
+  background: url(https://cdn.pixabay.com/photo/2014/06/30/18/39/rain-380634_1280.png);
+}
+
+header h1 {
+  text-align: center;
+}
+
+h1, h2 {
+  font-family: "Comic Sans", sans-serif;
+}
+
+ .column-1 {
+   width: 43%;
+   float: left;
+   margin: 10px 5px 10px 10px;
+   padding: 10px;
+   border: 3px dotted black;
+   background-color: lightgray;
+ }
+ 
+/*  article{
+   border: 1px solid dashed;
+ } */
+ 
+ .column-2 {
+   width: 43%;
+   float: left;
+   margin: 10px;
+   padding: 10px 10px 65px 10px;
+   border: 3px dotted black;
+   background-color: lightgray;
+ }
+ 
+ footer {
+   width: 100%;
+   clear: left;
+   margin: 10px;
+   padding: 10px;
+   text-align: center;
+   border: 3px dotted black;
+ }
+ 
+ code{
+   font-weight: bold;
+  
+ }
+ 
+ a{
+   color: grey;
+   text-decoration: none;
+ }
+ 
+ a:visited{
+   color: lightgreen;
+ }
+ 
+ a:hover{
+   color: skyblue;
+   text-decoration: underline;
+ }
+ 
+ footer{
+   font-size: 20px;
+   font-style: italic;
+ }
+ 
+ h2{
+   text-transform: lowercase;
+ }
+ 
+ details p{
+   text-indent: 8px;
+ }
+ 
+ details{
+   padding-left: 5px;
+   border-bottom: 1px solid black;
+ }
+ 
+ @media screen and (max-width: 400px){
+   
+   header{
+     overflow: scroll;
+   }
+   .column-1{
+     width: 100%;
+     float: none;
+   }
+   .column-2{
+     width: 100%;
+     float: none;
+   }
+ }
+

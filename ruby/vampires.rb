@@ -1,6 +1,10 @@
+# interview program
+
 puts "How many employees will be processed?"
 process_num = gets.chomp.to_i
 count = 0
+
+#loop for multiple employee survery
 
 while count < process_num
 	count += 1
@@ -34,6 +38,8 @@ while count < process_num
 
 	puts "Do you have any allergies?"
 
+# loop for list of allergies
+
 	var = true
 	while var == true
 
@@ -50,10 +56,8 @@ while count < process_num
 			end
 	end
 
-# need an array with all the answers?
-# interview = []
-# interview.push(user_input, age, year, garlic, insurance)
-# puts interview
+# status decision
+
 	if allergy == "sunshine"
 		break
 	end

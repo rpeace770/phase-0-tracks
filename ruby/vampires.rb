@@ -7,16 +7,28 @@ age = gets.chomp.to_i
 puts "What year were you born?"
 year = gets.chomp.to_i
 
-puts "Our company cafeteria serves garlic bread. Should we order some for you?"
-garlic = gets.chomp
+puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
+answer = gets.chomp.downcase
 
-puts "Would you like to enroll in the company's health insurance?"
-insurance = gets.chomp
+if answer == "y"
+	garlic = true
+else
+	garlic = false
+end
+
+puts "Would you like to enroll in the company's health insurance? (y/n)"
+answer2 = gets.chomp.downcase
+
+if answer2 == "y"
+	health = true
+else
+	health = false
+end
 
 # need an array with all the answers?
-interview = []
-interview.push(user_input, age, year, garlic, insurance)
-puts interview
+# interview = []
+# interview.push(user_input, age, year, garlic, insurance)
+# puts interview
 
 # wolves_like_sunshine = true
 # wolves_like_garlic = true
@@ -32,27 +44,24 @@ puts interview
 # loop for all employees
 # while count < process_num
 
-# case interview
+if (2017 - year == age) && (garlic == true || health == true)
+	status = "Probably not a vampire."
+end
 
-# when (year - current_year == age) && (garlic == true || insurance == true)
-# 	status = "Probably not a vampire."
+if (2017 - year != age) && (garlic == false || health == false)
+	status = "Probably a vampire."
+end
 
-# when (year - current_year != age) && (garlic == false || insurance == false)
-# 	status = "Probably a vampire."
+if (2017 - year != age) && (garlic == false && health == false)
+	status = "Almost certainly a vampire."
+end
 
-# when (year - current_year != age) && (garlic == false && insurance == false)
-# 	status = "Almost certainly a vampire."
+if (user_input == "Drake Cula") || (user_input == "Tu Fang")
+	status = "Definitely a vampire."
+end
 
-# when (name == "Drake Cula") || (name = "Tu Fang")
-# 	status = "Definitely a vampire."
+if status == nil
+	status = "Results inconclusive"
+end
 
-# #else statement????
-# when 
-# 	status = "Results inconclusive"
-
-# end
-
-# puts status
-
-# end
-
+puts "#{status}"

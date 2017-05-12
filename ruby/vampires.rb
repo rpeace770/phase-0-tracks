@@ -1,67 +1,64 @@
-puts "What is your name?"
-user_input = gets.chomp
+puts "How many employees will be processed?"
+process_num = gets.chomp.to_i
+count = 0
 
-puts "How old are you?"
-age = gets.chomp.to_i
+while count < process_num
+	count += 1
 
-puts "What year were you born?"
-year = gets.chomp.to_i
+	puts "What is your name?"
+	user_input = gets.chomp
 
-puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
-answer = gets.chomp.downcase
+	puts "How old are you?"
+	age = gets.chomp.to_i
 
-if answer == "y"
-	garlic = true
-else
-	garlic = false
-end
+	puts "What year were you born?"
+	year = gets.chomp.to_i
 
-puts "Would you like to enroll in the company's health insurance? (y/n)"
-answer2 = gets.chomp.downcase
+	puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
+	answer = gets.chomp.downcase
 
-if answer2 == "y"
-	health = true
-else
-	health = false
-end
+		if answer == "y"
+			garlic = true
+		else
+			garlic = false
+		end
+
+	puts "Would you like to enroll in the company's health insurance? (y/n)"
+	answer2 = gets.chomp.downcase
+
+		if answer2 == "y"
+			health = true
+		else
+			health = false
+		end
 
 # need an array with all the answers?
 # interview = []
 # interview.push(user_input, age, year, garlic, insurance)
 # puts interview
 
-# wolves_like_sunshine = true
-# wolves_like_garlic = true
-# vampires_like_sunshine = false
-# vampires_like_garlic = false
 
-# (ruby keyword for current year?)
+	if (2017 - year == age) && (garlic == true || health == true)
+		status = "Probably not a vampire."
+	end
 
-# puts "How many employees will be processed?"
-# process_num = gets.chomp.to_i
-# count = 0
+	if (2017 - year != age) && (garlic == false || health == false)
+		status = "Probably a vampire."
+	end
 
-# loop for all employees
-# while count < process_num
+	if (2017 - year != age) && (garlic == false && health == false)
+		status = "Almost certainly a vampire."
+	end
 
-if (2017 - year == age) && (garlic == true || health == true)
-	status = "Probably not a vampire."
-end
+	if (user_input == "Drake Cula") || (user_input == "Tu Fang")
+		status = "Definitely a vampire."
+	end
 
-if (2017 - year != age) && (garlic == false || health == false)
-	status = "Probably a vampire."
-end
-
-if (2017 - year != age) && (garlic == false && health == false)
-	status = "Almost certainly a vampire."
-end
-
-if (user_input == "Drake Cula") || (user_input == "Tu Fang")
-	status = "Definitely a vampire."
-end
-
-if status == nil
-	status = "Results inconclusive"
-end
+	if status == nil
+		status = "Results inconclusive"
+	end
 
 puts "#{status}"
+puts ""
+
+end

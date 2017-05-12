@@ -32,11 +32,31 @@ while count < process_num
 			health = false
 		end
 
+	puts "Do you have any allergies?"
+
+	var = true
+	while var == true
+
+		puts "Please list one allergy at a time. Write 'done' when finished."
+		allergy = gets.chomp
+
+			if allergy == "sunshine"
+				puts "Probably a vampire"
+				var = false
+			elsif allergy == "done"
+				var = false
+			else
+				puts "Any other allergies?"
+			end
+	end
+
 # need an array with all the answers?
 # interview = []
 # interview.push(user_input, age, year, garlic, insurance)
 # puts interview
-
+	if allergy == "sunshine"
+		break
+	end
 
 	if (2017 - year == age) && (garlic == true || health == true)
 		status = "Probably not a vampire."

@@ -57,6 +57,7 @@ while count < process_num
 	end
 
 # status decision
+# LOOK HERE!!!!!!!!!!!!!! Keep the break, but start the loop over from the beginning for multiple employees
 
 	if allergy == "sunshine"
 		break
@@ -86,3 +87,7 @@ puts "#{status}"
 puts ""
 
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+
+

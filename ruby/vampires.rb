@@ -36,26 +36,6 @@ while count < process_num
 			health = false
 		end
 
-	puts "Do you have any allergies?"
-
-# loop for list of allergies
-
-	var = true
-	while var == true
-
-		puts "Please list one allergy at a time. Write 'done' when finished."
-		allergy = gets.chomp
-
-			if allergy == "sunshine"
-				puts "Probably a vampire"
-				var = false
-			elsif allergy == "done"
-				var = false
-			else
-				puts "Any other allergies?"
-			end
-	end
-
 # status decision
 # LOOK HERE!!!!!!!!!!!!!! Keep the break, but start the loop over from the beginning for multiple employees
 
@@ -77,6 +57,26 @@ while count < process_num
 
 	if status == nil
 		status = "Results inconclusive"
+	end
+
+puts "Do you have any allergies?"
+
+# loop for list of allergies
+
+	var = true
+	while var == true
+
+		puts "Please list one allergy at a time. Write 'done' when finished."
+		allergy = gets.chomp
+
+			if allergy == "sunshine"
+				status = "Probably a vampire"
+				var = false
+			elsif allergy == "done"
+				var = false
+			else
+				puts "Any other allergies?"
+			end
 	end
 
 puts ""

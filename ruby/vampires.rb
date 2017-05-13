@@ -81,6 +81,8 @@ puts "Do you have any allergies?"
 			end
 	end
 
+#spacing between status for each employee
+
 puts ""
 puts "#{status}"
 puts ""

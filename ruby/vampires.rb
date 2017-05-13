@@ -59,10 +59,6 @@ while count < process_num
 # status decision
 # LOOK HERE!!!!!!!!!!!!!! Keep the break, but start the loop over from the beginning for multiple employees
 
-	if allergy == "sunshine"
-		break
-	end
-
 	if (2017 - year == age) && (garlic == true || health == true)
 		status = "Probably not a vampire."
 	end
@@ -83,6 +79,7 @@ while count < process_num
 		status = "Results inconclusive"
 	end
 
+puts ""
 puts "#{status}"
 puts ""
 

@@ -2,6 +2,7 @@
 # loop through each letter and change to the next letter
 # leave spaces as they are
 
+#OUR DEFINED METHODS
 
 def encrypt(lowercase_string)
   index = 0
@@ -39,6 +40,7 @@ def decrypt(lowercase_string)
 			alpha_index = alphabet.index(lowercase_string[index]) - 1
 			decrypted_string[index] = alphabet[alpha_index]
 
+			# other option for method
 			# prev_letter = alphabet[alphabet.index(lowercase_string[index]) - 1]
 			# decrypted_string[index] = prev_letter
 
@@ -58,6 +60,16 @@ end
 # The nested method works because the encrypt method encrypts the string. Then, the new string is applied to the decrypt method and decrypts back to the original string.
 # Works like PEMDAS, order of operations, but with methods
 
+# OUR DRIVER CODE
 
+puts "Would you like to encrypt or decrypt?"
+decision = gets.chomp
 
+puts "What is your password?"
+password = gets.chomp
 
+if decision == "encrypt"
+	puts "Your encrypted password is #{encrypt(password)}."
+elsif decision == "decrypt"
+	puts "Your decrypted password is #{decrypt(password)}."
+end

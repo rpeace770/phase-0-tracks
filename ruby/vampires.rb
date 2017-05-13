@@ -8,6 +8,7 @@ count = 0
 
 while count < process_num
 	count += 1
+	# reset status for each employee
 	status = nil
 
 	puts "What is your name?"
@@ -38,7 +39,6 @@ while count < process_num
 		end
 
 # status decision
-# LOOK HERE!!!!!!!!!!!!!! Keep the break, but start the loop over from the beginning for multiple employees
 
 	if (2017 - year == age) && (garlic == true || health == true)
 		status = "Probably not a vampire."
@@ -63,6 +63,7 @@ while count < process_num
 puts "Do you have any allergies?"
 
 # loop for list of allergies
+# allergies after status decision in case user chooses sunshine
 
 	var = true
 	while var == true

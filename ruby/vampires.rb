@@ -11,7 +11,7 @@ while count < process_num
 	status = nil
 
 	puts "What is your name?"
-	user_input = gets.chomp
+	user_input = gets.chomp.downcase
 
 	puts "How old are you?"
 	age = gets.chomp.to_i
@@ -52,7 +52,7 @@ while count < process_num
 		status = "Almost certainly a vampire."
 	end
 
-	if (user_input == "Drake Cula") || (user_input == "Tu Fang")
+	if (user_input == "drake cula") || (user_input == "tu fang")
 		status = "Definitely a vampire."
 	end
 

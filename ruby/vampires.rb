@@ -8,6 +8,7 @@ count = 0
 
 while count < process_num
 	count += 1
+	status = nil
 
 	puts "What is your name?"
 	user_input = gets.chomp

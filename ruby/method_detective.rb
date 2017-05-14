@@ -32,7 +32,7 @@
 "The mystery of the missing first letter".slice(1, 38)
 # => "he mystery of the missing first letter"
 
-"Elementary,    my   dear        Watson!".delete("  ")
+"Elementary,    my   dear        Watson!".squeeze(" ")
 # => "Elementary, my dear Watson!"
 
 "z".bytesize

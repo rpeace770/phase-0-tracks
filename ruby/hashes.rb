@@ -1,14 +1,3 @@
-#print hash to screen when all questions are answered
-
-#give user opportunity to update a key, no loop, once is fine
-#if designer says none, skip the update
-
-#use string method to turn into a symbol
-
-#no need for user errors
-
-#print latest hash and exit
-
 #METHODS
 
 client = {
@@ -45,22 +34,51 @@ client[:bedrooms] = gets.chomp.to_i
 
 puts "Do you have a pet(s)?"
 	answer = gets.chomp.downcase
-	if answer == "yes"
-		client[:pets] = true
-	end
-	if answer == "no"
-		client[:pets] = false
-	end
+		if answer == "yes"
+			client[:pets] = true
+		end
+		if answer == "no"
+			client[:pets] = false
+		end
 
 puts "Do you need a laundry room?"
 	answer2 = gets.chomp.downcase
-	if answer2 == "yes"
-		client[:laundry] = true
-	end
-	if answer2 == "no"
-		client[:laundry] = false
-	end
+		if answer2 == "yes"
+			client[:laundry] = true
+		end
+		if answer2 == "no"
+			client[:laundry] = false
+		end
 
+#print hash to screen when all questions are answered
+puts client
+
+#give user opportunity to update a key, no loop, once is fine
+#if designer says none, skip the update
+
+puts "Please enter a key to update or type 'none'."
+	user_input = gets.chomp.to_sym
+puts "What is your new answer?"
+	new_input = gets.chomp
+		if user_input == :none
+			puts "Thanks for your time!"
+		end
+		if user_input == :name || :decor_theme
+			client[user_input] = new_input
+		elsif user_input == :age || :num_children || :bedrooms
+			new_input = new_input.to_i
+			client[user_input] = new_input
+		elsif user_input == :pets || :laundry
+			if new_input == "yes"
+				client[user_input] = true
+			else
+				client[user_input] = false
+			end
+		else
+			puts "Thanks for your time!"
+		end
+
+# #print latest hash and exit
 puts client
 
 

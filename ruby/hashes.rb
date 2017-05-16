@@ -1,11 +1,3 @@
-# clients name, age, number of children, decor theme, etc
-# need strings, integers, and boolean data
-# keys should be symbols UNLESS a string is needed
-
-#prompt user for all information
-
-#convert user input to appropriate data type
-
 #print hash to screen when all questions are answered
 
 #give user opportunity to update a key, no loop, once is fine
@@ -30,6 +22,11 @@ client = {
 }
 
 #DRIVER CODE
+# clients name, age, number of children, decor theme, etc
+# need strings, integers, and boolean data
+# keys should be symbols UNLESS a string is needed
+# prompt user for all information
+# convert user input to appropriate data type
 
 puts "What is your full name?"
 client[:name] = gets.chomp
@@ -47,18 +44,24 @@ puts "How many bedrooms do you need?"
 client[:bedrooms] = gets.chomp.to_i
 
 puts "Do you have a pet(s)?"
-client[:pets] = gets.chomp
+	answer = gets.chomp.downcase
+	if answer == "yes"
+		client[:pets] = true
+	end
+	if answer == "no"
+		client[:pets] = false
+	end
 
 puts "Do you need a laundry room?"
-client[:laundry] = gets.chomp
+	answer2 = gets.chomp.downcase
+	if answer2 == "yes"
+		client[:laundry] = true
+	end
+	if answer2 == "no"
+		client[:laundry] = false
+	end
 
-p client[:name]
-p client[:age]
-p client[:num_children]
-p client[:decor_theme]
-p client[:bedrooms]
-p client[:pets]
-p client[:laundry]
+puts client
 
 
 

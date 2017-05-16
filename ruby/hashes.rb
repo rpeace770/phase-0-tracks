@@ -66,8 +66,7 @@ puts "What is your new answer?"
 		if user_input == :name || :decor_theme
 			client[user_input] = new_input
 		elsif user_input == :age || :num_children || :bedrooms
-			new_input = new_input.to_i
-			client[user_input] = new_input
+			client[user_input] = new_input.to_i
 		elsif user_input == :pets || :laundry
 			if new_input == "yes"
 				client[user_input] = true
@@ -80,11 +79,6 @@ puts "What is your new answer?"
 
 # #print latest hash and exit
 puts client
-
-
-
-
-
 
 
 

@@ -65,18 +65,13 @@ puts "What is your new answer?"
 		end
 		if user_input == :name || :decor_theme
 			client[user_input] = new_input
-		elsif user_input == :age || :num_children || :bedrooms
-			client[user_input] = new_input.to_i
-		elsif user_input == :pets || :laundry
-			if new_input == "yes"
-				client[user_input] = true
-			else
-				client[user_input] = false
-			end
-		else
-			puts "Thanks for your time!"
 		end
-
+		if user_input == :age || :num_children || :bedrooms
+			client[user_input] = new_input.to_i
+		end
+		if user_input == :pets || :laundry
+			client[user_input] = true
+		end
 # #print latest hash and exit
 puts client
 

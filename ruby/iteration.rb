@@ -33,9 +33,9 @@
 # p fruits
 
 numbers = [1, 2, 3, 4, 5]
-p numbers
-numbers.delete_if { |number| number < 3 }
-p numbers
+# p numbers
+# numbers.delete_if { |number| number < 3 }
+# p numbers
 
 num_word = {
 	one: 1,
@@ -44,16 +44,18 @@ num_word = {
 	four: 4,
 	five: 5
 }
+# p num_word
+# num_word.delete_if { |name, num| num < 3 }
+# p num_word
+
+
+p numbers
+numbers.keep_if { |number| number < 3 }
+p numbers
 
 p num_word
-
-num_word.delete_if { |name, num| num < 3 }
-
+num_word.keep_if { |name, num| num < 3 }
 p num_word
-
-
-
-
 
 
 

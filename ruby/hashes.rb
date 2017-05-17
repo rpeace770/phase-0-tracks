@@ -60,18 +60,21 @@ puts "Please enter a key to update or type 'none'."
 	user_input = gets.chomp.to_sym
 puts "What is your new answer?"
 	new_input = gets.chomp
-		if user_input == :none
-			puts "Thanks for your time!"
-		end
-		if user_input == :name || :decor_theme
-			client[user_input] = new_input
-		end
-		if user_input == :age || :num_children || :bedrooms
-			client[user_input] = new_input.to_i
-		end
-		if user_input == :pets || :laundry
-			client[user_input] = true
-		end
+	# client[user_input] = new_input
+
+case user_input
+when :age, :num_children, :bedrooms
+	client[user_input] = new_input.to_i
+when :pets, :laundry
+	if new_input == "yes"
+		client[user_input] = true
+	else
+		client[user_input] = false
+	end
+else
+	client[user_input] = new_input
+end
+
 # #print latest hash and exit
 puts client
 

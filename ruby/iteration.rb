@@ -8,12 +8,15 @@
 
 #declare array and hash
 
-fruit = ["apple", "banana", "pear", "grape", "orange"]
+fruits = ["apple", "banana", "pear", "grape", "orange"]
 
 best_pie = {
-	apple: "american"
-	pumpkin: "best"
-	cherry: "gross"
+	apple: "american",
+	pumpkin: "best",
+	cherry: "gross",
 	buttermilk: "sweet"
 }
 
+#iterate through array and hash
+
+fruits.each { |fruit| puts "I'm holding a #{fruit}!" }

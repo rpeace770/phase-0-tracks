@@ -29,8 +29,9 @@ while index < reverse_name.length
 			new_vowel_index = vowels.index(reverse_name[index]) + 1
 			alias_name[index] = vowels[new_vowel_index]
 		else
-			new_consonant_index = consonants.index(reverse_name[index]) + 1
-			alias_name[index] = consonants[new_consonant_index]
+			# new_consonant_index = consonants.index(reverse_name[index]) + 1
+			# alias_name[index] = consonants[new_consonant_index]
+			alias_name[index] = "n"
 		end
 		index += 1
 end

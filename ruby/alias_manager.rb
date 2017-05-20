@@ -1,10 +1,10 @@
+def alias_game(name)
 #var to keep loop going
 continue_loop = true
 #empty array for listing alias names at the end
 alias_group = []
 
 while continue_loop
-
 #ask for first name and break if user types quit
 puts "What is your first name? (or 'quit' to exit)"
 first_name = gets.chomp.downcase
@@ -49,14 +49,15 @@ new_name = split_name[0].capitalize + " " + split_name[1].capitalize
 puts "\nYour alias name is " + new_name + ".\n"
 
 alias_group << "#{full_name_string} is actually #{new_name}."
-
+end
+puts alias_group
 end
 
-puts alias_group
+puts "Would you like to play alias game? (y/n?)"
+user_input = gets.chomp.downcase
 
-
-
-
-
+if user_input == "y"
+	alias_game()
+end
 
 

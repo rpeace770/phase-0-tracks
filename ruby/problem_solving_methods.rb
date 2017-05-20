@@ -1,31 +1,25 @@
 array = [24, 4, 6, 89, 2]
 
-
 def search_array(array, num)
 
 index = 0
+variable = nil
 
 array.each do |array_num|
 
-if num == array_num
-	puts "We found #{array_num} at #{index}!"
-else
-	puts "We didn't find your number at #{index}."
-end
+	if num == array_num
+		variable = index
+	end
 
 index += 1
-
-end
 end
 
-search_array(array, 89)
+variable
+end
 
-# use length or each
+puts search_array(array, 89)
+puts search_array(array, 4)
+puts search_array(array, 25)
 
-
-# if num == array_num
-# 	puts "We found #{array_num} at #{index}!"
-# 	break
-# end
-# 	puts "nil"
-# end
+# ran this line to make sure the value was nil
+# puts search_array(array, 25).nil?

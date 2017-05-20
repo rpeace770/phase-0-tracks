@@ -21,22 +21,28 @@ puts reverse_name
 
 vowels = "aeiou"
 consonants = "bcdfghjklmnpqrstvwxyz"
-index = 0
+i = 0
 alias_name = ""
 
-while index < reverse_name.length
-		if reverse_name[index].include?("a")
-			new_vowel_index = vowels.index(reverse_name[index]) + 1
-			alias_name[index] = vowels[new_vowel_index]
-		else
-			# new_consonant_index = consonants.index(reverse_name[index]) + 1
-			# alias_name[index] = consonants[new_consonant_index]
-			alias_name[index] = "n"
-		end
-		index += 1
+while i < reverse_name.length
+	if consonants.include?(reverse_name[i]) == true
+		consonant_num = consonants.index(reverse_name[i])
+		alias_name[i] = consonants[(consonant_num + 1) % 21]
+	elsif vowels.include?(reverse_name[i]) == true
+		vowel_num = vowels.index(reverse_name[i])
+		alias_name[i] = vowels[(vowel_num + 1) % 5]
+	else
+		alias_name[i] = " "
+	end
+	i += 1
 end
-puts alias_name
 
-# #put in e
-# #add one to index
-# #get next vowel in return
+new_name = alias_name.split(" ", 2)
+p new_name[0].capitalize + " " + new_name[1].capitalize
+# p alias_name.capitalize
+
+
+
+
+
+

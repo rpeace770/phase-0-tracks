@@ -21,8 +21,12 @@ reverse_name = full_name.reverse!.join(" ")
 vowels = "aeiou"
 consonants = "bcdfghjklmnpqrstvwxyz"
 i = 0
+#empty string to store alias
 alias_name = ""
 
+#index through vowels or consonants depending on where the letter is located
+#use modulo operator to get remainders so that last letter goes to the first letter
+#new letter is assigned to alias_name variable
 while i < reverse_name.length
 	if consonants.include?(reverse_name[i]) == true
 		consonant_num = consonants.index(reverse_name[i])
@@ -36,6 +40,7 @@ while i < reverse_name.length
 	i += 1
 end
 
+#split alias_name string into two words to capitalize each word
 new_name = alias_name.split(" ", 2)
 puts "\nYour alias name is: " + new_name[0].capitalize + " " + new_name[1].capitalize
 

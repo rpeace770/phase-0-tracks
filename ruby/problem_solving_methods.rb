@@ -1,3 +1,5 @@
+#SEARCH METHOD
+
 array = [24, 4, 6, 89, 2]
 
 def search_array(array, num)

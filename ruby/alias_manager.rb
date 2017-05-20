@@ -41,7 +41,8 @@ while i < reverse_name.length
 end
 
 #split alias_name string into two words to capitalize each word
-new_name = alias_name.split(" ", 2)
-puts "\nYour alias name is: " + new_name[0].capitalize + " " + new_name[1].capitalize
+split_name = alias_name.split(" ", 2)
+new_name = split_name[0].capitalize + " " + split_name[1].capitalize
+puts "\nYour alias name is " + new_name + ".\n"
 
 end

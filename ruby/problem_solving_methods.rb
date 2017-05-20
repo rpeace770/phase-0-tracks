@@ -17,9 +17,9 @@ end
 variable
 end
 
-puts search_array(array, 89)
-puts search_array(array, 4)
-puts search_array(array, 25)
+# puts search_array(array, 89)
+# puts search_array(array, 4)
+# puts search_array(array, 25)
 
 # ran this line to make sure the value was nil
 # puts search_array(array, 25).nil?
@@ -59,3 +59,81 @@ end
 # p fibonacci(0)
 # p fibonacci(1)
 # p fibonacci(6)
+
+#INSERTION SORT
+
+#take last two numbers of an array
+#order them in new array
+#take first number from original array
+#puts in correct order in new array
+#continue until all original numbers are in new array
+
+original_array = [108, 13, 12, 7, 22, 96]
+
+def death_sort(array)
+new_array = []
+	
+	last = array.pop
+	secondlast = array.pop
+
+	if last > secondlast
+		new_array += [secondlast, last]
+	else
+		new_array += [last, secondlast]
+	end
+
+until array.length == 0
+	sort_num = array[0]
+	array.delete_at(0)
+	i = 0
+	lower = true
+
+	while lower
+		if sort_num > new_array[-1]
+			new_array.insert(-1, sort_num)
+			lower = false
+		elsif sort_num > new_array[i]
+			i += 1
+		else
+			new_array.insert(i, sort_num)
+			lower = false
+		end
+	end
+end
+new_array
+
+# 22, 96, 108, 224
+
+
+
+	# p new_array
+	# p array
+
+end
+
+
+p death_sort(original_array)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

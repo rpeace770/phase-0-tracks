@@ -12,18 +12,63 @@ zombie_apocalypse_supplies.each { |item| print item + "*"}
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 
+new_array = []
+i = 0
 
+zombie_apocalypse_supplies.each do |item|
+
+
+	if new_array == []
+		new_array[0] = item
+	elsif item > new_array[-1]
+		new_array[-1] = item
+	else
+		new_array[i] = item
+		i += 1
+	end
+end
+
+p new_array
 
 # ----
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
 # For instance: are boots in your list of supplies?
+
+def search_array(array, item)
+index = 0
+packed = nil
+array.each do |array_item|
+	if item == array_item
+		packed = index
+	end
+index += 1
+end
+packed
+end
+
+puts search_array(zombie_apocalypse_supplies, "boots").nil?
+puts search_array(zombie_apocalypse_supplies, "rations").nil?
 # ----
 
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
+
+new_array = []
+i = 0
+
+zombie_apocalypse_supplies.each do |item|
+	if i < 5
+		new_array[i] = item
+		i += 1
+	else
+		nil
+	end
+end
+
+p new_array
 # ----
 
 # 5. You found another survivor! This means you can combine your supplies.
@@ -33,6 +78,12 @@ zombie_apocalypse_supplies.each { |item| print item + "*"}
 # documentation for Arrays.
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
+
+other_survivor_supplies.each { |new_item| zombie_apocalypse_supplies.push(new_item) }
+
+updated_list = zombie_apocalypse_supplies.uniq
+puts updated_list
+
 # ----
 
 # Hash Drills

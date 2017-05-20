@@ -1,24 +1,23 @@
-# user input for name
-# swap first and last name
-# change all vowels to next vowel (aeiou)
-# change all consonants to next consonant
+#var to keep loop going
+continue_loop = true
 
-#METHODS
+while continue_loop
 
-#reverse name
-
-puts "What is your first name?"
+#ask for first name and break if user types quit
+puts "What is your first name? (or 'quit' to exit)"
 first_name = gets.chomp.downcase
+	if first_name == "quit"
+		break
+	end
 
 puts "What is your last name?"
 last_name = gets.chomp.downcase
 
+# store first and last name in array to reverse each word and join them back together
 full_name = [first_name, last_name]
 reverse_name = full_name.reverse!.join(" ")
-puts reverse_name
 
-# next vowel
-
+#variables for vowels and consonants to index through
 vowels = "aeiou"
 consonants = "bcdfghjklmnpqrstvwxyz"
 i = 0
@@ -38,11 +37,6 @@ while i < reverse_name.length
 end
 
 new_name = alias_name.split(" ", 2)
-p new_name[0].capitalize + " " + new_name[1].capitalize
-# p alias_name.capitalize
+puts "\nYour alias name is: " + new_name[0].capitalize + " " + new_name[1].capitalize
 
-
-
-
-
-
+end

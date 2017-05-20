@@ -68,7 +68,7 @@ end
 #puts in correct order in new array
 #continue until all original numbers are in new array
 
-original_array = [108, 13, 12, 7, 22, 96]
+original_array = [108, 13, 12, 7, 22, 96, 83]
 
 def death_sort(array)
 new_array = []
@@ -102,15 +102,7 @@ until array.length == 0
 end
 new_array
 
-# 22, 96, 108, 224
-
-
-
-	# p new_array
-	# p array
-
 end
-
 
 p death_sort(original_array)
 

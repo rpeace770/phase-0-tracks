@@ -1,4 +1,3 @@
-def alias_game(name)
 #var to keep loop going
 continue_loop = true
 #empty array for listing alias names at the end
@@ -51,13 +50,6 @@ puts "\nYour alias name is " + new_name + ".\n"
 alias_group << "#{full_name_string} is actually #{new_name}."
 end
 puts alias_group
-end
-
-puts "Would you like to play alias game? (y/n?)"
-user_input = gets.chomp.downcase
-
-if user_input == "y"
-	alias_game()
 end
 
 

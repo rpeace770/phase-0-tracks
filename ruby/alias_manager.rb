@@ -1,5 +1,7 @@
 #var to keep loop going
 continue_loop = true
+#empty array for listing alias names at the end
+alias_group = []
 
 while continue_loop
 
@@ -14,6 +16,7 @@ puts "What is your last name?"
 last_name = gets.chomp.downcase
 
 # store first and last name in array to reverse each word and join them back together
+full_name_string = first_name.capitalize + " " + last_name.capitalize
 full_name = [first_name, last_name]
 reverse_name = full_name.reverse!.join(" ")
 
@@ -45,4 +48,15 @@ split_name = alias_name.split(" ", 2)
 new_name = split_name[0].capitalize + " " + split_name[1].capitalize
 puts "\nYour alias name is " + new_name + ".\n"
 
+alias_group << "#{full_name_string} is actually #{new_name}."
+
 end
+
+puts alias_group
+
+
+
+
+
+
+

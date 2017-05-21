@@ -12,46 +12,68 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 
-				new_array = []
-				i = 0
+i = 0
+j = 1
 
-				zombie_apocalypse_supplies.each do |item|
+first = zombie_apocalypse_supplies[i]
+second = zombie_apocalypse_supplies[j]
+	
+	until j == 8
+		if first > second
+			puts "happy"
+		else
+			first = second
+		end
+	i += 1
+end
 
-					if new_array == []
-						new_array[0] = item.downcase
-					elsif item > new_array[-1]
-						new_array[-1] = item.downcase
-					else
-						new_array[i] = item.downcase
-					end
-					i += 1
-				end
+p zombie_apocalypse_supplies
 
-				p new_array
 
-# sorted_supplies = []
 
-# current_index = 0
 
-# while current_index < 8
-#   lowest = zombie_apocalypse_supplies[0]
-#   current_index = 0
-#   delete_index = 0
 
-#   zombie_apocalypse_supplies.each do |supply|
+				# new_array = []
+				# i = 0
 
-#     if supply.downcase < lowest.downcase
-#       lowest = supply
-#       delete_index = current_index
-#     end
-#     current_index += 1
-#   end
+				# zombie_apocalypse_supplies.each do |item|
 
-#   sorted_supplies << lowest
- 
-# end
+				# 	if item == "hatchet"
+				# 		new_array[0] = item.downcase
+				# 	elsif item > new_array[-1]
+				# 		new_array[-1] = item.downcase
+				# 	else
+				# 		new_array[i] = item.downcase
+				# 	end
+				# 	i += 1
+				# end
 
-# p sorted_supplies
+				# p new_array
+
+sorted_supplies = []
+
+while zombie_apocalypse_supplies != []
+  lowest = zombie_apocalypse_supplies[0]
+  current_index = 0
+  delete_index = 0
+
+  zombie_apocalypse_supplies.each do |supply|
+
+    if supply.downcase < lowest.downcase
+      lowest = supply
+      delete_index = current_index
+    else
+
+    end
+    current_index += 1
+  end
+
+  sorted_supplies << lowest
+  
+  zombie_apocalypse_supplies.delete_at(delete_index)
+  p sorted_supplies
+end
+
 
 
 
@@ -129,18 +151,18 @@ extinct_animals = {
 # 1. Iterate through extinct_animals hash, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
 
-extinct_animals.each { |animal, year| print animal + "-" + year.to_s + "*"}
+# extinct_animals.each { |animal, year| print animal + "-" + year.to_s + "*"}
 
 # ----
 
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000. Do not use any special built-in methods.
 
-extinct_animals.each do |animal, year|
-	if year < 2000
-		puts animal
-	end
-end
+# extinct_animals.each do |animal, year|
+# 	if year < 2000
+# 		puts animal
+# 	end
+# end
 
 # ----
 
@@ -149,11 +171,11 @@ end
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
 
-extinct_animals.each do |animal, year|
-	extinct_animals[animal] = year - 3
-end
+# extinct_animals.each do |animal, year|
+# 	extinct_animals[animal] = year - 3
+# end
 
-p extinct_animals
+# p extinct_animals
 
 
 # ----
@@ -179,9 +201,9 @@ end
 extinct
 end
 
-puts search_hash(extinct_animals, "Andean Cat")
-puts search_hash(extinct_animals, "Dodo")
-puts search_hash(extinct_animals, "Saiga Antelope")
+# puts search_hash(extinct_animals, "Andean Cat")
+# puts search_hash(extinct_animals, "Dodo")
+# puts search_hash(extinct_animals, "Saiga Antelope")
 
 # ----
 
@@ -189,11 +211,12 @@ puts search_hash(extinct_animals, "Saiga Antelope")
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
-extinct_animals.each do |animal, year|
-		extinct_animals.shift
-		if animal == "Pyrenean Ibex"
-			p extinct_animals.shift
-		end
-end
+
+# extinct_animals.each do |animal, year|
+# 		extinct_animals.shift
+# 		if animal == "Pyrenean Ibex"
+# 			p extinct_animals.shift
+# 		end
+# end
 
 # ----

@@ -213,7 +213,7 @@ end
 # for Hashes.
 
 # extinct_animals.each do |animal, year|
-# 		extinct_animals.shift
+# 		extinct_animals.delete(animal)
 # 		if animal == "Pyrenean Ibex"
 # 			p extinct_animals.shift
 # 		end

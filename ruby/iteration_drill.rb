@@ -12,25 +12,40 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 
-i = 0
-j = 1
+# i = 0
+# j = 1
 
-first = zombie_apocalypse_supplies[i]
-second = zombie_apocalypse_supplies[j]
+# first = zombie_apocalypse_supplies[i]
+# second = zombie_apocalypse_supplies[j]
 	
-	until j == 8
-		if first > second
-			puts "happy"
+# 	until j == 8
+# 		if first > second
+# 			puts "happy"
+# 		else
+# 			first = second
+# 		end
+# 	i += 1
+# end
+
+# p zombie_apocalypse_supplies
+
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+new_array = []
+i = 0
+
+while i < 8
+	j = 0
+	while j < 26
+		if zombie_apocalypse_supplies[i] < alphabet[j]
+			new_array << zombie_apocalypse_supplies[i]
+			j = 26
 		else
-			first = second
+			j += 1
 		end
+	end
 	i += 1
 end
-
-p zombie_apocalypse_supplies
-
-
-
+p new_array
 
 
 				# new_array = []
@@ -50,29 +65,29 @@ p zombie_apocalypse_supplies
 
 				# p new_array
 
-sorted_supplies = []
+# sorted_supplies = []
 
-while zombie_apocalypse_supplies != []
-  lowest = zombie_apocalypse_supplies[0]
-  current_index = 0
-  delete_index = 0
+# while zombie_apocalypse_supplies != []
+#   lowest = zombie_apocalypse_supplies[0]
+#   current_index = 0
+#   delete_index = 0
 
-  zombie_apocalypse_supplies.each do |supply|
+#   zombie_apocalypse_supplies.each do |supply|
 
-    if supply.downcase < lowest.downcase
-      lowest = supply
-      delete_index = current_index
-    else
+#     if supply.downcase < lowest.downcase
+#       lowest = supply
+#       delete_index = current_index
+#     else
 
-    end
-    current_index += 1
-  end
+#     end
+#     current_index += 1
+#   end
 
-  sorted_supplies << lowest
+#   sorted_supplies << lowest
   
-  zombie_apocalypse_supplies.delete_at(delete_index)
-  p sorted_supplies
-end
+#   zombie_apocalypse_supplies.delete_at(delete_index)
+#   p sorted_supplies
+# end
 
 
 

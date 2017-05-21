@@ -29,23 +29,44 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 
 # p zombie_apocalypse_supplies
 
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-new_array = []
-i = 0
-
-while i < 8
-	j = 0
-	while j < 26
-		if zombie_apocalypse_supplies[i] < alphabet[j]
-			new_array << zombie_apocalypse_supplies[i]
-			j = 26
-		else
-			j += 1
+def alpha_sort(array)
+	i = 0
+	length = 0
+	swapped = false
+		while length < 7
+			while i < 7
+				if array[i] > array[i + 1]
+					array[i], array[i + 1] = array[i + 1], array[i]
+					swapped = true
+				end
+				i += 1
+			end
+			length + 1
 		end
-	end
-	i += 1
+	p array
 end
-p new_array
+
+alpha_sort(zombie_apocalypse_supplies)
+
+
+
+# alphabet = "abcdefghijklmnopqrstuvwxyz"
+# new_array = []
+# i = 0
+
+# while i < 8
+# 	j = 0
+# 	while j < 26
+# 		if zombie_apocalypse_supplies[i] < alphabet[j]
+# 			new_array << zombie_apocalypse_supplies[i]
+# 			j = 26
+# 		else
+# 			j += 1
+# 		end
+# 	end
+# 	i += 1
+# end
+# p new_array
 
 
 				# new_array = []

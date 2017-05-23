@@ -44,3 +44,56 @@ Rufus.roll_over
 Rufus.dog_years(30)
 
 Rufus.shake
+
+#BEER CLASS
+
+class Beer
+
+ def initialize()
+   "crack open a brewski"
+  end
+
+ def brew(type)
+    puts "your #{type} has brewed for three months"
+  end
+
+ def drink(number)
+    count = 1
+    until count == number
+   	puts "you drank #{count} beers"
+   	count += 1
+    end
+  end
+
+end
+#TEST CODE
+
+# ipa = Beer.new
+
+# p ipa.brew("Fist City")
+
+# p ipa.drink(4)
+
+drinks = []
+
+count = 0
+while count < 50
+   ale = Beer.new
+   drinks << ale
+   count += 1
+end
+
+drinks.each do |pint|
+ pint.brew("sours")
+ pint.drink(2)
+end
+
+
+
+
+
+
+
+
+
+

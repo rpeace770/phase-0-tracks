@@ -49,19 +49,19 @@ Rufus.shake
 
 class Beer
 
- def initialize()
+  def initialize()
    "crack open a brewski"
   end
 
- def brew(type)
+  def brew(type)
     puts "your #{type} has brewed for three months"
   end
 
- def drink(number)
+  def drink(number)
     count = 1
     until count == number
-   	puts "you drank #{count} beers"
-   	count += 1
+	   	puts "you drank #{count} beers"
+	   	count += 1
     end
   end
 
@@ -78,14 +78,14 @@ drinks = []
 
 count = 0
 while count < 50
-   ale = Beer.new
-   drinks << ale
-   count += 1
+  ale = Beer.new
+  drinks << ale
+  count += 1
 end
 
 drinks.each do |pint|
- pint.brew("sours")
- pint.drink(2)
+	pint.brew("sour")
+ 	pint.drink(2)
 end
 
 

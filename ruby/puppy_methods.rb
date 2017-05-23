@@ -22,6 +22,10 @@ class Puppy
 		puts "Shake"
 	end
 
+	def initialize()
+		puts "Initializing new puppy instance..."
+	end
+
 end
 
 #DRIVER CODE

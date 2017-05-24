@@ -8,7 +8,7 @@ class Santa
 		p "That was a good #{cookie}!"
 	end
 
-	def initialize
+	def initialize(gender, ethnicity)
 		p "Initializing Santa instance..."
 		@gender = gender
 		@ethnicity = ethnicity
@@ -18,7 +18,28 @@ class Santa
 
 end
 
-Nick = Santa.new(gender, ethnicity)
+santas = []
 
-Nick.speak
-Nick.eat_milk_and_cookies("oreo")
+genders = ["female", "transgender", "male", "agender", "N/A"]
+ethnicities = ["Swedish", "Iranian", "Korean", "Norwegian", "N/A"]
+
+i = 0
+while i < genders.length
+	santas << Santa.new(genders[i], ethnicities[i])
+	i += 1
+end
+
+p santas
+
+
+
+
+
+
+
+
+
+
+
+
+

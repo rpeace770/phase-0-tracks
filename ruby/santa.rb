@@ -1,4 +1,9 @@
 class Santa
+	#getter methods
+	attr_reader :age, :ethnicity
+	#setter methods or just use accessor if you want to use same variable for setter and getter
+	attr_accessor :gender
+	#attr_writer - only writing, not readable
 
 	def speak
 		p "Ho, ho, ho! Haaaapy holidays!"
@@ -22,34 +27,40 @@ class Santa
 
 	def get_mad_at(reindeer_name)
 		switch_index = @reindeer_ranking.index(reindeer_name)
-		last = @reindeer_ranking.last
-		reindeer_index = @reindeer_ranking.index(last)
-		@reindeer_ranking[switch_index], @reindeer_ranking[reindeer_index] = @reindeer_ranking[reindeer_index], @reindeer_ranking[switch_index]
+		@reindeer_ranking.delete_at(switch_index)
+		@reindeer_ranking << reindeer_name
 		p @reindeer_ranking
-	end
+		end
 
 end
 
-# santas = []
+santas = []
 
-# genders = ["female", "transgender", "male", "agender", "N/A"]
-# ethnicities = ["Swedish", "Iranian", "Korean", "Norwegian", "N/A"]
+genders = ["agender", "female", "bigender", "male", "gender fluid", "N/A", "transgender"]
+ethnicities = ["Swedish", "black", "Iranian", "Korean-American", "white", "Norwegian", "N/A"]
 
-# i = 0
-# while i < genders.length
-# 	santas << Santa.new(genders[i], ethnicities[i])
-# 	i += 1
-# end
-
-# p santas
-
-Nick = Santa.new("male", "Latino")
-
-Nick.celebrate_birthday
-Nick.get_mad_at("Dasher")
+i = 0
+while i < 100
+	santas << Santa.new(genders.sample, ethnicities.sample)
+	puts santas[i].age
+	puts santas[i].ethnicity
+	puts santas[i].gender
+	i += 1
+end
 
 
 
+#TEST CODE
+
+# Nick = Santa.new("male", "Latino")
+
+# Nick.celebrate_birthday
+# Nick.get_mad_at("Comet")
+# Nick.gender = "female"
+# p Nick
+
+# p Nick.age
+# p Nick.ethnicity
 
 
 

@@ -16,23 +16,37 @@ class Santa
 		@age = 0
 	end
 
+	def celebrate_birthday
+		p @age + 1
+	end
+
+	def get_mad_at(reindeer_name)
+		switch_index = @reindeer_ranking.index(reindeer_name)
+		last = @reindeer_ranking.last
+		reindeer_index = @reindeer_ranking.index(last)
+		@reindeer_ranking[switch_index], @reindeer_ranking[reindeer_index] = @reindeer_ranking[reindeer_index], @reindeer_ranking[switch_index]
+		p @reindeer_ranking
+	end
+
 end
 
-santas = []
+# santas = []
 
-genders = ["female", "transgender", "male", "agender", "N/A"]
-ethnicities = ["Swedish", "Iranian", "Korean", "Norwegian", "N/A"]
+# genders = ["female", "transgender", "male", "agender", "N/A"]
+# ethnicities = ["Swedish", "Iranian", "Korean", "Norwegian", "N/A"]
 
-i = 0
-while i < genders.length
-	santas << Santa.new(genders[i], ethnicities[i])
-	i += 1
-end
+# i = 0
+# while i < genders.length
+# 	santas << Santa.new(genders[i], ethnicities[i])
+# 	i += 1
+# end
 
-p santas
+# p santas
 
+Nick = Santa.new("male", "Latino")
 
-
+Nick.celebrate_birthday
+Nick.get_mad_at("Dasher")
 
 
 

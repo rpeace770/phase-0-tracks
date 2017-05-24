@@ -10,11 +10,15 @@ class Santa
 
 	def initialize
 		p "Initializing Santa instance..."
+		@gender = gender
+		@ethnicity = ethnicity
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		@age = 0
 	end
 
 end
 
-Nick = Santa.new
+Nick = Santa.new(gender, ethnicity)
 
 Nick.speak
 Nick.eat_milk_and_cookies("oreo")

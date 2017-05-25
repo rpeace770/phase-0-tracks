@@ -94,11 +94,15 @@ pretty_list(new_list)
 What did you learn about pseudocode from working on this challenge?
 	I learned that it makes it so much easier to write code if you have a detailed plan in place. I have not been planning entire blocks of code and instead writing step by step in psuedocode. I will definitely be writing more psuedocode!
 What are the tradeoffs of using arrays and hashes for this challenge?
-	I like working with hashes if you have two different values to work with. Arrays are excellent for listing the same types of items.
+	I like working with hashes if you have two different values to work with. Arrays are excellent for listing the same type of items. Arrays are easier to iterate through because you can use index numbers and you can easily switch items around. Hashes are easier if your data needs to be labeled and accessed that way.
 What does a method return?
+	A method returns the last evaluated expression in the code.
 What kind of things can you pass into methods as arguments?
+	You can pass strings, integers, arrays, and hashes as arguments.
 How can you pass information between methods?
+	You can take the return value from one method and pass it to the next method.
 What concepts were solidified in this challenge, and what concepts are still confusing?
+	My concepts on creating methods and using methods for arrays and hashes were solidified. I definitely have a better understanding of return values and "puts" now. I am still putting together all the concepts that I learned last week with the concepts I learned this week. Sometimes, it takes me a second to truly understand the task at hand and what I need to do to accomplish that task.
 =end
 
 

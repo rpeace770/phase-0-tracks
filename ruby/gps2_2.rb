@@ -61,7 +61,7 @@ def pretty_list(list)
   end
 end
 
-
+=begin
 grocery_list = create_list("apples oranges pears olives")
 p grocery_list
 add_item(grocery_list,"grapes")
@@ -74,4 +74,33 @@ update_item(grocery_list,"grapes",40)
 p grocery_list
 pretty_list(grocery_list)
 p grocery_list
+=end
+
+new_list = create_list("Limeade Syrup Crest")
+p new_list
+add_item(new_list, "Lemonade",2)
+add_item(new_list, "Tomatoes",3)
+add_item(new_list, "Onions")
+add_item(new_list, "Ice Cream",4)
+p new_list
+delete_item(new_list, "Lemonade")
+p new_list
+update_item(new_list, "Ice Cream",1)
+p new_list
+pretty_list(new_list)
+
+#REFLECTION
+=begin
+What did you learn about pseudocode from working on this challenge?
+	I learned that it makes it so much easier to write code if you have a detailed plan in place. I have not been planning entire blocks of code and instead writing step by step in psuedocode. I will definitely be writing more psuedocode!
+What are the tradeoffs of using arrays and hashes for this challenge?
+	I like working with hashes if you have two different values to work with. Arrays are excellent for listing the same types of items.
+What does a method return?
+What kind of things can you pass into methods as arguments?
+How can you pass information between methods?
+What concepts were solidified in this challenge, and what concepts are still confusing?
+=end
+
+
+
 

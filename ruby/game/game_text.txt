@@ -3,27 +3,64 @@
 class Game
 
 attr_reader
-attr_accessor
-
-def welcome
-	puts "Welcome to the game!"
-	puts "Please enter a word:"
-	@word = gets.chomp
-end
+attr_accessor :word
 
 def secret_word(word)
 	word = @word
 end
 
+def display(display, word, letter)
+	p display
+	correct_guess = word.index(letter)
+	if correct_guess != nil
+		display[correct_guess] = letter
+	else
+		display
+	end
 end
 
+def message
+	if display.include?("-")
+		puts "You lose!"
+	else
+		puts "Congratulations! You guessed the word!"
+	end
+end
+
+end
+
+#count guesses method, display word method, duplicate letters method, ending message method
 
 
 #DRIVER CODE
 
-#user enters a word
-#guesses are limited and related to the length of the word
+guesses = []
+
+puts "Welcome to the game!"
+puts "Please enter a word:"
+word = gets.chomp
+
+"INSTANCE".secret_word(word)
+
+display = "-" * word.length
+
+i = 0
+
+while i < word.length
+
+	puts "Guess a letter:"
+	letter = gets.chomp
+
+	"INSTANCE".display(display, word, letter)
+
+	i += 1
+end
+
+"INSTANCE".message
+
+ok#user enters a word
+ok#guesses are limited and related to the length of the word
 #repeated guesses do not count agains the user
-#guesser receives continual feedback on the current state of the word, like hangman
-#congratulatory message if they win, taunting message if they lose
+ok#guesser receives continual feedback on the current state of the word, like hangman
+ok#congratulatory message if they win, taunting message if they lose
 

@@ -10,12 +10,12 @@ def secret_word(word)
 end
 
 def display(display, word, letter)
-	p display
 	correct_guess = word.index(letter)
 	if correct_guess != nil
 		display[correct_guess] = letter
+		p display
 	else
-		display
+		p display
 	end
 end
 
@@ -54,7 +54,7 @@ while i < word.length
 	i += 1
 end
 
-"INSTANCE".message
+"INSTANCE".message(display)
 
 #player one enters a word
 #display hangman word

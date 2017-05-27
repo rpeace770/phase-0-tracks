@@ -58,9 +58,13 @@ end
 
 "INSTANCE".message
 
-ok#user enters a word
-ok#guesses are limited and related to the length of the word
+#player one enters a word
+#display hangman word
+#player two guesses a letter
+#if letter is correct display hangman word with letter
+#if not display previous hangman word
+#guesses are limited and related to the length of the word
 #repeated guesses do not count agains the user
-ok#guesser receives continual feedback on the current state of the word, like hangman
-ok#congratulatory message if they win, taunting message if they lose
+#guesser receives continual feedback on the current state of the word, like hangman
+#congratulatory message if they win, taunting message if they lose
 

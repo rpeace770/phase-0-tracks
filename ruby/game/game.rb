@@ -40,6 +40,7 @@ letter_array = []
 
 i = 0
 while i < secret_word.length
+	break if display.include?("-") == false
 	puts "Guess a letter:"
 	letter = gets.chomp.downcase
 		if letter_array.include?(letter) == false

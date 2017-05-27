@@ -6,7 +6,7 @@ attr_reader
 attr_accessor :word
 
 def secret_word(word)
-	word = @word
+	@word = word
 end
 
 def display(display, word, letter)

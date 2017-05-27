@@ -13,8 +13,20 @@ require_relative 'game'
 describe Game do
 	let(:word) { Game.new("hello") }
 
-	it "prints the secret word" do
-		expect(word.print_word).to eq "hello"
+	it "displays the secret word in dashes" do
+		expect(word.initial_display).to eq "-----"
+	end
+
+	it "displays letters when the user guesses correctly" do
+		expect(word.display("-----", "hello", "e")).to eq "-e---"
+	end
+
+	it "congratulates the user if they win" do
+		expect(word.result("hello")).to eq "You win!"
+	end
+
+	it "taunts the user if they lose" do
+		expect(word.result("h-llo")).to eq "You lose!"
 	end
 
 end

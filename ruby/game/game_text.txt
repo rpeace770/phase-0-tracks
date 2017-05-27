@@ -19,7 +19,7 @@ def display(display, word, letter)
 	end
 end
 
-def message
+def message(display)
 	if display.include?("-")
 		puts "You lose!"
 	else
@@ -28,8 +28,6 @@ def message
 end
 
 end
-
-#count guesses method, display word method, duplicate letters method, ending message method
 
 
 #DRIVER CODE

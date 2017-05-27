@@ -27,7 +27,7 @@ describe Game do
 	end
 
 	it "taunts the user if they lose" do
-		expect(word.result("h-llo")).to eq "You lose!"
+		expect(word.result("h-llo")).to eq "You lose! The word was hello."
 	end
 
 end

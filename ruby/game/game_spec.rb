@@ -4,7 +4,7 @@
 #if letter is correct display hangman word with letter
 #if not display previous hangman word
 #guesses are limited and related to the length of the word
-#---------repeated guesses do not count agains the user
+#repeated guesses do not count agains the user
 #show multiple letters at once
 #guesser receives continual feedback on the current state of the word, like hangman
 #congratulatory message if they win, taunting message if they lose

@@ -8,13 +8,13 @@
 #guesser receives continual feedback on the current state of the word, like hangman
 #congratulatory message if they win, taunting message if they lose
 
-require_re
+require_relative 'game'
 
 describe Game do
-	let(:word) { Game.new("hello")}
+	let(:word) { Game.new("hello") }
 
-	it "stores the word for player 2 to guess" do
-		expect(word.initialize).to eq word
+	it "prints the secret word" do
+		expect(word.print_word).to eq "hello"
 	end
 
 end

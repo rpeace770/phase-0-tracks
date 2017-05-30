@@ -1,27 +1,27 @@
 // Set up arrays
 
-// var colors = ['red','blue','glitter','purple'];
+var colors = ['red','blue','glitter','purple'];
 
-// var names = ['Ed','Reina','James','Beauty'];
+var names = ['Ed','Reina','James','Beauty'];
 
-// colors.push('pink');
+colors.push('pink');
 
-// names.push('Gertrude');
+names.push('Gertrude');
 
-// console.log(colors);
+console.log(colors);
 
-// console.log(names);
+console.log(names);
 
 
 // // Set up the object
 
-// horses = {};
+horses = {};
 
-// for(var i = 0; i < names.length; i++) {
-//     horses[names[i]] = colors[i];
-// }
+for(var i = 0; i < names.length; i++) {
+    horses[names[i]] = colors[i];
+}
 
-// console.log(horses);
+console.log(horses);
 
 //write a constructor function for a car. Give it a few different properties of various data types, including at least one function. Demonstrate that your function works by creating a few cars with it.
 

@@ -90,3 +90,23 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  #One is a hash rocket and the other is a symbol. The hash rocket allows the key to be written as a string, while the symbol does not.
+# What does require_relative do? How is it different from require?
+  #require_relative pulls in information from a specific file and require pulls in information through the pathway to the file
+# What are some ways to iterate through a hash?
+  #You can iterate through a hash using the .each method and calling each key.
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+  #The variables were instance variables that did not need to be passed in as parameters.
+# What concept did you most solidify in this challenge?
+  #I feel stronger about calling and iterating through a hash that has another hash as the value.
+
+
+
+
+
+
+
+
+

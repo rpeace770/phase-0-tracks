@@ -6,11 +6,12 @@
 
 
 function reverse(word) {
-	backward_string = ""
-	for (i = word.length; i >= 0; i--) {
-	backward_string += word[i];
+	var backwardString = '';
+	var maxNumber = word.length - 1;
+	for (i = maxNumber; i >= 0; i--) {
+	backwardString += word[i];
 	}
-	console.log(backward_string);
+	console.log(backwardString);
 }
 
 // var backwards = reverse("hello");

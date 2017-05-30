@@ -8,19 +8,17 @@
 function reverse(word) {
 	var backwardString = '';
 	var maxNumber = word.length - 1;
-	for (i = maxNumber; i >= 0; i--) {
-	backwardString += word[i];
-	}
-	console.log(backwardString);
+		for (i = maxNumber; i >= 0; i--) {
+			backwardString += word[i];
+		}
+		return backwardString;
 }
 
-// var backwards = reverse("hello");
+var backwards = reverse("computer");
 
-// if (1 == 1) {
-// 	console.log(backwards);
-// }
-// else {
-// 	console.log("Nope!");
-// }
-
-reverse("hello");
+if (1 != 2) {
+	console.log(backwards);
+}
+else {
+	console.log("Nope")
+}

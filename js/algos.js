@@ -9,22 +9,29 @@
 // print greatest length
 
 var words = ["cat", "paint", "happiness", "no"];
-var copy = []
+var copy = {}
 //loop through each word and get length of the string
-words.forEach(function(item) {
-	copy.push(item.length);
-});
-
-copy.sort(function(a, b) {
-	return a - b;
-});
 
 words.forEach(function(item) {
-	if (item.length == copy.last) {
-		console.log(item);
-	}
+	var obj = {item: item.length};
+	console.log(obj);
 });
-
-
 
 // console.log(copy);
+
+
+
+// words.forEach(function(item) {
+// 	copy.push(item.length);
+// });
+
+// copy.sort(function(a, b) {
+// 	return a - b;
+// });
+
+// words.forEach(function(item) {
+// 	if (item.length == copy.last) {
+// 		console.log(item);
+// 	}
+// });
+

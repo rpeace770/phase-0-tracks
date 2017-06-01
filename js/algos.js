@@ -5,7 +5,7 @@
 // sort words in order from least to greatest length
 // print greatest length
 
-function sort(array) {
+function longestWord(array) {
 	var longest = ""
 	//loop through each word and get length of the string
 	// compare to longest string set each time
@@ -20,7 +20,7 @@ function sort(array) {
 //write a function that takes two objects and checks to see if the objects share at least one key-value pair.
 
 var words = ["cat", "paint", "happiness", "no", "miraculous"];
-sort(words);
+longestWord(words);
 
 
 

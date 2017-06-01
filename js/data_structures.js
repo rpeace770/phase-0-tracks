@@ -40,3 +40,8 @@ console.log(car.color);
 car.drive(car.speed, car.make);
 car1.drive(car1.speed, car1.make);
 car2.drive(car2.speed, car2.make);
+
+
+
+
+

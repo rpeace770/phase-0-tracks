@@ -24,34 +24,47 @@ function longestWord(array) {
 //yourFunction({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 //evaluates to true
 
-function share(object, object2) {
+function key_share(object, object2) {
+	var keys = Object.keys(object);
+	var keys2 = Object.keys(object2);
+	var values = Object.values(object);
+	var values2 = Object.values(object2);
+
 	//check object key/value1 with object2 key/value1
 	//check object key/value1 with object2 key/value2
 	//check object key/value2 with object2 key/value1
 	//check object key/value2 with object2 key/value2
-	// if (object[key] == object2[key]) {
-	// 	true
-	// }
-	// else if (object[key] == object2[value]) {
-	// 	true
-	// }
-	// else if (object[value] == object2[key]) {
-	// 	true
-	// }
-	// else if (object[value] == object2[value]) {
-	// 	true
-	// }
-	// else {
-	// 	false
-	// }
-	console.log(Object.values(object));
+
+	if (keys[0] === keys2[0] && values[0] === values2[0]) {
+		true
+	} 
+	else if (keys[0] === keys2[1] && values[0] === values2[1]) {
+		true
+	}
+	else if (keys[1] === keys2[0] && values[1] === values2[0]) {
+		true
+	}
+	else if (keys[1] === keys2[1] && values[1] === values2[1]) {
+		true
+	}
+	else {
+		false
+	}
+	
 };
 
+
+function test_data(integer) {
+	//build array of strings according to integer
+	//min 1 letter and max 10 letter
+	//generate random length for each word
+	// Math.floor((Math.random() * 10) + 1);
+}
 
 //DRIVER CODE
 
 var words = ["cat", "paint", "happiness", "no", "miraculous"];
 longestWord(words);
 
-share({name: "Steven", age: 54}, {name: "Tamir", age: 54});
+key_share({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 

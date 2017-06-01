@@ -83,14 +83,12 @@ longestWord(words);
 
 key_share({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 
-for(i = 0; i < 10; i++) {
+//need new counter variable
+for(k = 0; k < 10; k++) {
 	var longest_array = test_data(3);
 	console.log(longest_array);
 	var result = longestWord(longest_array);
 	console.log(result);
 };
-
-//LOOP NOT WORKING, FIX BEFORE TURN IN
-
 
 

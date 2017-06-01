@@ -2,36 +2,27 @@
 // .length gives the length of a string
 // make sample array
 // loop through array and get length of each string
-// put first word into blank array
-// put second word into blank array depending on whether it is larger or smaller
-// repeat for the other words
 // sort words in order from least to greatest length
 // print greatest length
 
-var words = ["cat", "paint", "happiness", "no"];
-var copy = {}
-//loop through each word and get length of the string
+function sort(array) {
+	var longest = ""
+	//loop through each word and get length of the string
+	// compare to longest string set each time
+	for(var i = 0; i < array.length; i++) {
+		if (array[i].length > longest.length) {
+			longest = array[i];
+		}
+	}
+	console.log(longest)
+};
 
-words.forEach(function(item) {
-	var obj = {item: item.length};
-	console.log(obj);
-});
+//write a function that takes two objects and checks to see if the objects share at least one key-value pair.
 
-// console.log(copy);
+var words = ["cat", "paint", "happiness", "no", "miraculous"];
+sort(words);
 
 
 
-// words.forEach(function(item) {
-// 	copy.push(item.length);
-// });
 
-// copy.sort(function(a, b) {
-// 	return a - b;
-// });
-
-// words.forEach(function(item) {
-// 	if (item.length == copy.last) {
-// 		console.log(item);
-// 	}
-// });
 

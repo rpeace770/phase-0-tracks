@@ -12,6 +12,8 @@
 require_relative 'game'
 
 describe Game do
+	#lets symbol stand for whatever is in the code block
+	#word is now an instance of the game method
 	let(:word) { Game.new("hello") }
 
 	it "displays letters when the user guesses correctly" do

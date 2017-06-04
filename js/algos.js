@@ -25,33 +25,46 @@ function longestWord(array) {
 //evaluates to true
 
 function key_share(object, object2) {
-	var keys = Object.keys(object);
-	var keys2 = Object.keys(object2);
-	var values = Object.values(object);
-	var values2 = Object.values(object2);
+	for (x in object) {
+		for (y in object2) {
+			if (x === y && object[x] === object2[y]){
+				return true;
+			}
+			// else {
+			// 	console.log(false);
+			// }
+		}
+	}
+}
 
-	//check object key/value1 with object2 key/value1
-	//check object key/value1 with object2 key/value2
-	//check object key/value2 with object2 key/value1
-	//check object key/value2 with object2 key/value2
+// function key_share(object, object2) {
+// 	var keys = Object.keys(object);
+// 	var keys2 = Object.keys(object2);
+// 	var values = Object.values(object);
+// 	var values2 = Object.values(object2);
 
-	if (keys[0] === keys2[0] && values[0] === values2[0]) {
-		return true
-	} 
-	else if (keys[0] === keys2[1] && values[0] === values2[1]) {
-		return true
-	}
-	else if (keys[1] === keys2[0] && values[1] === values2[0]) {
-		return true
-	}
-	else if (keys[1] === keys2[1] && values[1] === values2[1]) {
-		return true
-	}
-	else {
-		return false
-	}
+// 	//check object key/value1 with object2 key/value1
+// 	//check object key/value1 with object2 key/value2
+// 	//check object key/value2 with object2 key/value1
+// 	//check object key/value2 with object2 key/value2
+
+// 	if (keys[0] === keys2[0] && values[0] === values2[0]) {
+// 		return true
+// 	} 
+// 	else if (keys[0] === keys2[1] && values[0] === values2[1]) {
+// 		return true
+// 	}
+// 	else if (keys[1] === keys2[0] && values[1] === values2[0]) {
+// 		return true
+// 	}
+// 	else if (keys[1] === keys2[1] && values[1] === values2[1]) {
+// 		return true
+// 	}
+// 	else {
+// 		return false
+// 	}
 	
-};
+// };
 
 
 function test_data(integer) {

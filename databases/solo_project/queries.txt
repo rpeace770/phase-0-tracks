@@ -74,3 +74,5 @@ Barack Obama|true
 
 5. DELETE FROM presidents WHERE year_elected=2017;
 
+
+

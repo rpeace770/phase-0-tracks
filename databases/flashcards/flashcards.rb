@@ -3,6 +3,7 @@ require 'sqlite3'
 
 #creates new database
 db = SQLite3::Database.new("flashcards.db")
+#db.results_as_hash = true
 
 #create a table command
 create_table = <<-SQL
@@ -54,14 +55,19 @@ def user_remove_vocab(database)
 	end
 end
 
-
+def display_vocab(db)
+	list = db.execute("SELECT bones.word, bones.definition FROM bones")
+	list.each do |key, value|
+		puts "#{key} - #{value}"
+	end
+end
 
 
 # DRIVER CODE
 
-user_add_vocab(db)
-user_remove_vocab(db)
-
+# user_add_vocab(db)
+# user_remove_vocab(db)
+# display_vocab(db)
 
 
 

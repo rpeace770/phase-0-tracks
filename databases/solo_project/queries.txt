@@ -104,7 +104,23 @@ George W. Bush|true
 Barack Obama|true
 Donald Trump|
 
-8. 
+8. SELECT presidents.name, terms.two_terms FROM presidents JOIN terms ON presidents.serve_2_terms = terms.id WHERE presidents.serve_2_terms = 1;
+
+George Washington|true
+Thomas Jefferson|true
+James Madison|true
+James Monroe|true
+Andrew Jackson|true
+Ulysses S. Grant|true
+Grover Cleveland|true
+Grover Cleveland|true
+Woodrow Wilson|true
+Franklin D. Roosevelt|true
+Dwight D. Eisenhower|true
+Ronald Reagan|true
+Bill Clinton|true
+George W. Bush|true
+Barack Obama|true
 
 
 

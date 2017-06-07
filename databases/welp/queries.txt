@@ -1,0 +1,23 @@
+1. SELECT * FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id;
+
+1|5|My toilet now works!|5|7|7|Denzel|George|5|Plumbing by Janet
+2|3|Sushi was ok.|6|1|1|Bradford|Pitt|6|Sushi World
+3|2|Paid too much to get my car back.|2|5|5|Holly|Berry|2|Amir's Towing
+
+2. SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id;
+
+Denzel|George|Plumbing by Janet|5|My toilet now works!
+Bradford|Pitt|Sushi World|3|Sushi was ok.
+Holly|Berry|Amir's Towing|2|Paid too much to get my car back.
+
+3. SELECT * FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id WHERE businesses.id = 6;
+
+- Shows all data for specific business.
+
+2|3|Sushi was ok.|6|1|1|Bradford|Pitt|6|Sushi World
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews JOIN users ON reviews.user_id = users.id JOIN businesses ON reviews.business_id = businesses.id WHERE businesses.id = 6;
+
+- Shows chosen data for specific business from all three tables.
+
+Bradford|Pitt|Sushi World|3|Sushi was ok.

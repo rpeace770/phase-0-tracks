@@ -1,0 +1,116 @@
+1. SELECT * FROM terms;
+
+1|true
+2|false
+3|false_elected
+
+2. UPDATE presidents SET serve_2_terms=3 WHERE year_elected=1861;
+
+3. SELECT * FROM presidents JOIN terms ON presidents.serve_2_terms = terms.id;
+
+1|George Washington|Martha Washington|1789|1|1|true
+2|John Adams|Abigail Adams|1797|2|2|false
+3|Thomas Jefferson|Martha Jefferson|1801|1|1|true
+4|James Madison|Dolley Madison|1809|1|1|true
+5|James Monroe|Elizabeth Monroe|1817|1|1|true
+6|John Quincy Adams|Louisa Adams|1825|2|2|false
+7|Andrew Jackson|Rachel Jackson|1829|1|1|true
+8|Martin Van Buren|Hannah Van Buren|1837|2|2|false
+9|William Harrison|Anna Harrison|1841|2|2|false
+10|John Tyler|Letitia Tyler and Julia Tyler|1841|2|2|false
+11|James Polk|Sarah Polk|1845|2|2|false
+12|Zachary Taylor|Margaret Taylor|1849|2|2|false
+13|Millard Fillmore|Abigail Fillmore|1850|2|2|false
+14|Franklin Pierce|Jane Pierce|1853|2|2|false
+15|James Buchanan|N/A|1857|2|2|false
+16|Abraham Lincoln|Mary Lincoln|1861|3|3|false_elected
+17|Andrew Johnson|Eliza Johnson|1865|2|2|false
+18|Ulysses S. Grant|Julia Grant|1869|1|1|true
+19|Rutherford B. Hayes|Lucy Hayes|1877|2|2|false
+20|James Garfield|Lucretia Garfield|1881|2|2|false
+21|Chester Arthur|Ellen Arthur|1881|2|2|false
+22|Grover Cleveland|Frances Cleveland|1885|1|1|true
+23|Benjamin Harrison|Caroline Harrison|1889|2|2|false
+24|Grover Cleveland|Frances Cleveland|1893|1|1|true
+25|William McKinley|Ida McKinley|1897|3|3|false_elected
+26|Theodore Roosevelt|Edith Roosevelt|1901|2|2|false
+27|William Taft|Helen Taft|1909|2|2|false
+28|Woodrow Wilson|Ellen Wilson and Edith Wilson|1913|1|1|true
+29|Warren Harding|Florence Harding|1921|2|2|false
+30|Calvin Coolidge|Grace Coolidge|1923|2|2|false
+31|Herbert Hoover|Lou Hoover|1929|2|2|false
+32|Franklin D. Roosevelt|Eleanor Roosevelt|1933|1|1|true
+33|Harry Truman|Bess Truman|1945|2|2|false
+34|Dwight D. Eisenhower|Mamie Eisenhower|1953|1|1|true
+35|John F. Kennedy|Jacqueline Kennedy|1961|2|2|false
+36|Lyndon B. Johnson|Lady Bird Johnson|1963|2|2|false
+37|Richard Nixon|Pat Nixon|1969|3|3|false_elected
+38|Gerald Ford|Betty Ford|1974|2|2|false
+39|Jimmy Carter|Rosalynn Carter|1977|2|2|false
+40|Ronald Reagan|Nancy Reagan|1981|1|1|true
+41|George H.W. Bush|Barbara Bush|1989|2|2|false
+42|Bill Clinton|Hillary Clinton|1993|1|1|true
+43|George W. Bush|Laura Bush|2001|1|1|true
+44|Barack Obama|Michelle Obama|2009|1|1|true
+45|Donald Trump|Melania Trump|2017|2|2|false
+
+4. SELECT presidents.name, terms.two_terms FROM presidents JOIN terms ON presidents.serve_2_terms = terms.id WHERE presidents.serve_2_terms=1;
+
+George Washington|true
+Thomas Jefferson|true
+James Madison|true
+James Monroe|true
+Andrew Jackson|true
+Ulysses S. Grant|true
+Grover Cleveland|true
+Grover Cleveland|true
+Woodrow Wilson|true
+Franklin D. Roosevelt|true
+Dwight D. Eisenhower|true
+Ronald Reagan|true
+Bill Clinton|true
+George W. Bush|true
+Barack Obama|true
+
+5. DELETE FROM presidents WHERE year_elected=2017;
+
+6. SELECT presidents.name, terms.two_terms FROM presidents INNER JOIN terms ON presidents.serve_2_terms = terms.id WHERE year_elected > 1960;
+
+- Returned only presidents where the joined elements matched
+
+John F. Kennedy|false
+Lyndon B. Johnson|false
+Gerald Ford|false
+Jimmy Carter|false
+Ronald Reagan|true
+George H.W. Bush|false
+Bill Clinton|true
+George W. Bush|true
+Barack Obama|true
+
+7. SELECT presidents.name, terms.two_terms FROM presidents LEFT JOIN terms ON presidents.serve_2_terms = terms.id WHERE year_elected > 1960;
+
+- Returned all presidents even if the entry for serve_2_terms did not match the terms id.
+
+John F. Kennedy|false
+Lyndon B. Johnson|false
+Richard Nixon|
+Gerald Ford|false
+Jimmy Carter|false
+Ronald Reagan|true
+George H.W. Bush|false
+Bill Clinton|true
+George W. Bush|true
+Barack Obama|true
+Donald Trump|
+
+8. 
+
+
+
+
+
+
+
+
+

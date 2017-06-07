@@ -74,5 +74,43 @@ Barack Obama|true
 
 5. DELETE FROM presidents WHERE year_elected=2017;
 
+6. SELECT presidents.name, terms.two_terms FROM presidents INNER JOIN terms ON presidents.serve_2_terms = terms.id WHERE year_elected > 1960;
+
+- Returned only presidents where the joined elements matched
+
+John F. Kennedy|false
+Lyndon B. Johnson|false
+Gerald Ford|false
+Jimmy Carter|false
+Ronald Reagan|true
+George H.W. Bush|false
+Bill Clinton|true
+George W. Bush|true
+Barack Obama|true
+
+7. SELECT presidents.name, terms.two_terms FROM presidents LEFT JOIN terms ON presidents.serve_2_terms = terms.id WHERE year_elected > 1960;
+
+- Returned all presidents even if the entry for serve_2_terms did not match the terms id.
+
+John F. Kennedy|false
+Lyndon B. Johnson|false
+Richard Nixon|
+Gerald Ford|false
+Jimmy Carter|false
+Ronald Reagan|true
+George H.W. Bush|false
+Bill Clinton|true
+George W. Bush|true
+Barack Obama|true
+Donald Trump|
+
+8. 
+
+
+
+
+
+
+
 
 

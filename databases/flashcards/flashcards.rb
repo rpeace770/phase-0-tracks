@@ -21,8 +21,8 @@ def create_vocab(db, word, define)
   db.execute("INSERT INTO bones (word, definition) VALUES (?, ?)", [word, define])
 end
 
-#DRIVER CODE
-def add_vocab(database)
+#creates vocab list through user input
+def user_add_vocab(database)
 	user_word = nil
 	while true
 		puts "What word would you like to insert? (or done)"
@@ -37,8 +37,30 @@ def add_vocab(database)
 	end
 end
 
-add_vocab(db)
+def delete_vocab(db, word)
+	db.execute("DELETE FROM bones WHERE word=?", [word])
+end
 
+def user_remove_vocab(database)
+	user_word = nil
+	while true
+		puts "What word would you like to delete? (or done)"
+		user_word = gets.chomp.capitalize
+		if user_word != "Done"
+			delete_vocab(database, user_word)
+		else
+			return
+		end
+	end
+end
+
+
+
+
+# DRIVER CODE
+
+user_add_vocab(db)
+user_remove_vocab(db)
 
 
 

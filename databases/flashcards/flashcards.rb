@@ -5,9 +5,9 @@ require 'sqlite3'
 db = SQLite3::Database.new("flashcards.db")
 #db.results_as_hash = true
 
-#create a table command
+# create a table command
 create_table = <<-SQL
-  CREATE TABLE IF NOT EXISTS bones(
+  CREATE TABLE IF NOT EXISTS muscles(
     id INTEGER PRIMARY KEY,
     word VARCHAR(255),
     definition VARCHAR(255)

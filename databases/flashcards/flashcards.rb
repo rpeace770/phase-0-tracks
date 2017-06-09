@@ -44,6 +44,10 @@ def delete_vocab(db, word)
 	db.execute("DELETE FROM nursing WHERE word=?", [word])
 end
 
+def delete_all(db)
+	db.execute("DELETE FROM nursing")
+end
+
 def user_remove_vocab(database)
 	user_word = nil
 	while true
@@ -98,7 +102,7 @@ user_input = nil
 
 while user_input != "Q"
 	puts "What would you like to do? (or 'q' to quit)"
-	puts "Add\nDelete\nDisplay\nTest"
+	puts "Add\nDelete\nDelete all\nDisplay\nTest"
 	user_input = gets.chomp.capitalize
 
 	if user_input == "Q"
@@ -110,6 +114,10 @@ while user_input != "Q"
 	elsif user_input == "Delete"
 		puts " "
 		user_remove_vocab(db)
+		puts " "
+	elsif user_input == "Delete all"
+		puts " "
+		delete_all(db)
 		puts " "
 	elsif user_input == "Display"
 		puts " "

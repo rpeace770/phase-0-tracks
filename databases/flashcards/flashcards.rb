@@ -7,10 +7,11 @@ db = SQLite3::Database.new("flashcards.db")
 
 # create a table command
 create_table = <<-SQL
-  CREATE TABLE IF NOT EXISTS bones(
+  CREATE TABLE IF NOT EXISTS nursing(
     id INTEGER PRIMARY KEY,
     word VARCHAR(255),
-    definition VARCHAR(255)
+    definition VARCHAR(255),
+    recognition VARCHAR(255) DEFAULT "-"
   );
 SQL
 
@@ -19,13 +20,14 @@ db.execute(create_table)
 
 #creates a new vocab word and definition
 def create_vocab(db, word, define)
-  db.execute("INSERT INTO bones (word, definition) VALUES (?, ?)", [word, define])
+  db.execute("INSERT INTO nursing (word, definition) VALUES (?, ?)", [word, define])
 end
 
 #creates vocab list through user input
 def user_add_vocab(database)
 	user_word = nil
 	while true
+		display_vocab(database)
 		puts "What word would you like to insert? (or done)"
 		user_word = gets.chomp.capitalize
 		if user_word != "Done"
@@ -39,12 +41,13 @@ def user_add_vocab(database)
 end
 
 def delete_vocab(db, word)
-	db.execute("DELETE FROM bones WHERE word=?", [word])
+	db.execute("DELETE FROM nursing WHERE word=?", [word])
 end
 
 def user_remove_vocab(database)
 	user_word = nil
 	while true
+		display_vocab(database)
 		puts "What word would you like to delete? (or done)"
 		user_word = gets.chomp.capitalize
 		if user_word != "Done"
@@ -56,54 +59,57 @@ def user_remove_vocab(database)
 end
 
 def display_vocab(db)
-	list = db.execute("SELECT bones.word, bones.definition FROM bones")
-	list.each do |key, value|
-		puts "#{key} - #{value}"
+	list = db.execute("SELECT nursing.id, nursing.word, nursing.definition FROM nursing")
+	list.each do |number, word, definition|
+		puts "#{number}. #{word} - #{definition}"
+	end
+end
+
+def shuffle(db)
+	shuffle_list = db.execute("SELECT nursing.id, nursing.word, nursing.definition FROM nursing")
+	shuffle_list.shuffle.each do |number, word, definition|
+		puts "#{number}. #{word}"
+		puts "What is the definition?"
+		user_definition = gets.chomp
+		puts "The real definition is: #{definition}"
+		# puts "Were you correct? (y/n)"
+		# re_quiz = gets.chomp
+		# db.execute("UPDATE nursing SET recognition=#{re_quiz} WHERE number=#{number}")
 	end
 end
 
 
 # DRIVER CODE
 
-# user_add_vocab(db)
-# user_remove_vocab(db)
-# display_vocab(db)
+# user_input = nil
 
-# let user delete based on label!!!!!!!!!!!!
-user_input = nil
+# while user_input != "Q"
+# 	puts "What would you like to do? (or 'q' to quit)"
+# 	puts "Add\nDelete\nDisplay"
+# 	user_input = gets.chomp.capitalize
 
-while user_input != "Q"
-	puts "What would you like to do? (or 'q' to quit)"
-	puts "Add\nDelete\nDisplay"
-	user_input = gets.chomp.capitalize
-
-	if user_input == "Q"
-		puts "See you later!"
-	elsif user_input == "Add"
-		puts " "
-		user_add_vocab(db)
-		puts " "
-	elsif user_input == "Delete"
-		puts " "
-		user_remove_vocab(db)
-		puts " "
-	elsif user_input == "Display"
-		puts " "
-		display_vocab(db)
-		puts " "
-	else
-		puts " "
-		puts "I did not understand your command."
-		puts " "
-	end
-end
+# 	if user_input == "Q"
+# 		puts "See you later!"
+# 	elsif user_input == "Add"
+# 		puts " "
+# 		user_add_vocab(db)
+# 		puts " "
+# 	elsif user_input == "Delete"
+# 		puts " "
+# 		user_remove_vocab(db)
+# 		puts " "
+# 	elsif user_input == "Display"
+# 		puts " "
+# 		display_vocab(db)
+# 		puts " "
+# 	else
+# 		puts " "
+# 		puts "I did not understand your command."
+# 		puts " "
+# 	end
+# end
 
 
-
-
-
-
-
-
+shuffle(db)
 
 

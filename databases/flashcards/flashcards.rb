@@ -91,6 +91,7 @@ def shuffle(db)
 		puts "Were you correct? (y/n)"
 		re_quiz = gets.chomp
 		shuffle_insert(db, re_quiz, number)
+		puts " "
 	end
 	display_vocab(db)
 end

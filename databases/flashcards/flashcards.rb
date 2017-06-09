@@ -40,6 +40,32 @@ def user_add_vocab(database)
 	end
 end
 
+def change_word(db, old_word, new_word)
+	db.execute("UPDATE nursing SET word=? WHERE word=?", [new_word, old_word])
+end
+
+def word(db)
+	plain_display_vocab(db)
+	puts "What word would you like to change?"
+	user_word = gets.chomp.capitalize
+	puts "What is the new word?"
+	new_word = gets.chomp.capitalize
+	change_word(db, user_word, new_word)
+end
+
+def change_definition(db, old_word, definition)
+	db.execute("UPDATE nursing SET definition=? WHERE word=?", [definition, old_word])
+end
+
+def definition(db)
+	plain_display_vocab(db)
+	puts "Which word's definition would you like to change?"
+	old_word = gets.chomp.capitalize
+	puts "What is the new definition for #{old_word}?"
+	definition = gets.chomp
+	change_definition(db, old_word, definition)
+end
+
 def delete_vocab(db, word)
 	db.execute("DELETE FROM nursing WHERE word=?", [word])
 end
@@ -51,6 +77,7 @@ end
 def user_remove_vocab(database)
 	user_word = nil
 	while true
+		###CHANGE BACK TO PLAIN DISPLAY AND USE DATABASE
 		plain_display_vocab(database)
 		puts "What word would you like to delete? (or done)"
 		user_word = gets.chomp.capitalize
@@ -100,10 +127,9 @@ end
 # DRIVER CODE
 
 user_input = nil
-
 while user_input != "Q"
 	puts "What would you like to do? (or 'q' to quit)"
-	puts "Add\nDelete\nDelete all\nDisplay\nTest"
+	puts "Add\nChange word\nChange definition\nDelete\nDelete all\nDisplay\nTest"
 	user_input = gets.chomp.capitalize
 
 	if user_input == "Q"
@@ -111,6 +137,14 @@ while user_input != "Q"
 	elsif user_input == "Add"
 		puts " "
 		user_add_vocab(db)
+		puts " "
+	elsif user_input == "Change word"
+		puts " "
+		word(db)
+		puts " "
+	elsif user_input == "Change definition"
+		puts " "
+		definition(db)
 		puts " "
 	elsif user_input == "Delete"
 		puts " "

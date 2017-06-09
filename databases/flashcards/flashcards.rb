@@ -7,7 +7,7 @@ db = SQLite3::Database.new("flashcards.db")
 
 # create a table command
 create_table = <<-SQL
-  CREATE TABLE IF NOT EXISTS muscles(
+  CREATE TABLE IF NOT EXISTS bones(
     id INTEGER PRIMARY KEY,
     word VARCHAR(255),
     definition VARCHAR(255)
@@ -68,6 +68,27 @@ end
 # user_add_vocab(db)
 # user_remove_vocab(db)
 # display_vocab(db)
+
+# let user delete based on label!!!!!!!!!!!!
+user_input = nil
+
+while user_input != "Q"
+	puts "What would you like to do? (or 'q' to quit)"
+	puts "Add\nDelete\nDisplay"
+	user_input = gets.chomp.capitalize
+
+	if user_input == "Q"
+		puts "See you later!"
+	elsif user_input == "Add"
+		user_add_vocab(db)
+	elsif user_input == "Delete"
+		user_remove_vocab(db)
+	elsif user_input == "Display"
+		display_vocab(db)
+	else
+		puts "I did not understand your command."
+	end
+end
 
 
 

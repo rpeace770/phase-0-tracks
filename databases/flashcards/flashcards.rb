@@ -80,13 +80,21 @@ while user_input != "Q"
 	if user_input == "Q"
 		puts "See you later!"
 	elsif user_input == "Add"
+		puts " "
 		user_add_vocab(db)
+		puts " "
 	elsif user_input == "Delete"
+		puts " "
 		user_remove_vocab(db)
+		puts " "
 	elsif user_input == "Display"
+		puts " "
 		display_vocab(db)
+		puts " "
 	else
+		puts " "
 		puts "I did not understand your command."
+		puts " "
 	end
 end
 

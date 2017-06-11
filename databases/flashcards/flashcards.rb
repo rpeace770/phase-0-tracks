@@ -3,7 +3,7 @@ require 'sqlite3'
 
 #creates new database
 db = SQLite3::Database.new("flashcards.db")
-#db.results_as_hash = true
+# db.results_as_hash = true
 
 # create a table command
 create_table = <<-SQL
@@ -102,6 +102,8 @@ def shuffle(db)
 	display_vocab(db)
 end
 
+# print database information
+# p db.execute("SELECT nursing.id, nursing.word, nursing.definition, nursing.recognition FROM nursing")
 
 # DRIVER CODE
 

@@ -18,11 +18,6 @@ SQL
 #executes create table command
 db.execute(create_table)
 
-#creates a new vocab word and definition
-def create_vocab(db, word, define)
-  db.execute("INSERT INTO nursing (word, definition) VALUES (?, ?)", [word, define])
-end
-
 #creates vocab list through user input
 def user_add_vocab(db)
 	user_word = nil
@@ -33,15 +28,12 @@ def user_add_vocab(db)
 		if user_word != "Done"
 			puts "What is the definition for #{user_word}?"
 			user_def = gets.chomp.downcase
-			create_vocab(db, user_word, user_def)
+			#add new word and definition to table
+			db.execute("INSERT INTO nursing (word, definition) VALUES (?, ?)", [user_word, user_def])
 		else
 			return
 		end
 	end
-end
-
-def change_word(db, old_word, new_word)
-	db.execute("UPDATE nursing SET word=? WHERE word=?", [new_word, old_word])
 end
 
 def word(db)
@@ -50,11 +42,7 @@ def word(db)
 	user_word = gets.chomp.capitalize
 	puts "What is the new word?"
 	new_word = gets.chomp.capitalize
-	change_word(db, user_word, new_word)
-end
-
-def change_definition(db, old_word, definition)
-	db.execute("UPDATE nursing SET definition=? WHERE word=?", [definition, old_word])
+	db.execute("UPDATE nursing SET word=? WHERE word=?", [new_word, user_word])
 end
 
 def definition(db)
@@ -63,11 +51,7 @@ def definition(db)
 	old_word = gets.chomp.capitalize
 	puts "What is the new definition for #{old_word}?"
 	definition = gets.chomp
-	change_definition(db, old_word, definition)
-end
-
-def delete_vocab(db, word)
-	db.execute("DELETE FROM nursing WHERE word=?", [word])
+	db.execute("UPDATE nursing SET definition=? WHERE word=?", [definition, old_word])
 end
 
 def delete_all(db)
@@ -77,12 +61,11 @@ end
 def user_remove_vocab(db)
 	user_word = nil
 	while true
-		###CHANGE BACK TO PLAIN DISPLAY AND USE DATABASE
 		plain_display_vocab(db)
 		puts "What word would you like to delete? (or done)"
 		user_word = gets.chomp.capitalize
 		if user_word != "Done"
-			delete_vocab(db, user_word)
+			db.execute("DELETE FROM nursing WHERE word=?", [user_word])
 		else
 			return
 		end
@@ -104,10 +87,6 @@ def display_vocab(db)
 	end
 end
 
-def shuffle_insert(db, recog, number)
-	db.execute("UPDATE nursing SET recognition=? WHERE id=?", [recog, number])
-end
-
 def shuffle(db)
 	shuffle_list = db.execute("SELECT nursing.id, nursing.word, nursing.definition FROM nursing")
 	shuffle_list.shuffle.each do |number, word, definition|
@@ -117,7 +96,7 @@ def shuffle(db)
 		puts "The real definition is: #{definition}"
 		puts "Were you correct? (y/n)"
 		re_quiz = gets.chomp
-		shuffle_insert(db, re_quiz, number)
+		db.execute("UPDATE nursing SET recognition=? WHERE id=?", [re_quiz, number])
 		puts " "
 	end
 	display_vocab(db)

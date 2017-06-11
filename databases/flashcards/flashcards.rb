@@ -24,16 +24,16 @@ def create_vocab(db, word, define)
 end
 
 #creates vocab list through user input
-def user_add_vocab(database)
+def user_add_vocab(db)
 	user_word = nil
 	while true
-		plain_display_vocab(database)
+		plain_display_vocab(db)
 		puts "What word would you like to insert? (or done)"
 		user_word = gets.chomp.capitalize
 		if user_word != "Done"
 			puts "What is the definition for #{user_word}?"
 			user_def = gets.chomp.downcase
-			create_vocab(database, user_word, user_def)
+			create_vocab(db, user_word, user_def)
 		else
 			return
 		end
@@ -74,15 +74,15 @@ def delete_all(db)
 	db.execute("DELETE FROM nursing")
 end
 
-def user_remove_vocab(database)
+def user_remove_vocab(db)
 	user_word = nil
 	while true
 		###CHANGE BACK TO PLAIN DISPLAY AND USE DATABASE
-		plain_display_vocab(database)
+		plain_display_vocab(db)
 		puts "What word would you like to delete? (or done)"
 		user_word = gets.chomp.capitalize
 		if user_word != "Done"
-			delete_vocab(database, user_word)
+			delete_vocab(db, user_word)
 		else
 			return
 		end

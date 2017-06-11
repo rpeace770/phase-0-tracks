@@ -18,10 +18,11 @@ SQL
 #executes create table command
 db.execute(create_table)
 
-#creates vocab list through user input
+#creates vocab list through user input, loop for many additions
 def user_add_vocab(db)
 	user_word = nil
 	while true
+		#display without recognition column
 		plain_display_vocab(db)
 		puts "What word would you like to insert? (or done)"
 		user_word = gets.chomp.capitalize
@@ -42,6 +43,7 @@ def word(db)
 	user_word = gets.chomp.capitalize
 	puts "What is the new word?"
 	new_word = gets.chomp.capitalize
+	#update word in vocab list
 	db.execute("UPDATE nursing SET word=? WHERE word=?", [new_word, user_word])
 end
 
@@ -51,20 +53,24 @@ def definition(db)
 	old_word = gets.chomp.capitalize
 	puts "What is the new definition for #{old_word}?"
 	definition = gets.chomp
+	#update definition in vocab list
 	db.execute("UPDATE nursing SET definition=? WHERE word=?", [definition, old_word])
 end
 
 def delete_all(db)
+	#delete all vocab words from list
 	db.execute("DELETE FROM nursing")
 end
 
 def user_remove_vocab(db)
+	#loop for mulitple deletions
 	user_word = nil
 	while true
 		plain_display_vocab(db)
 		puts "What word would you like to delete? (or done)"
 		user_word = gets.chomp.capitalize
 		if user_word != "Done"
+			#remove one word at a time from list
 			db.execute("DELETE FROM nursing WHERE word=?", [user_word])
 		else
 			return
@@ -80,6 +86,7 @@ def plain_display_vocab(db)
 end
 
 def display_vocab(db)
+	#display for review purposes
 	list = db.execute("SELECT nursing.id, nursing.word, nursing.definition, nursing.recognition FROM nursing")
 	list.each do |number, word, definition, recognition|
 		puts "#{number}. #{word} - #{definition}"
@@ -88,6 +95,7 @@ def display_vocab(db)
 end
 
 def shuffle(db)
+	#shuffle vocab words and test user on knowledge
 	shuffle_list = db.execute("SELECT nursing.id, nursing.word, nursing.definition FROM nursing")
 	shuffle_list.shuffle.each do |number, word, definition|
 		puts "#{number}. #{word}"

@@ -95,6 +95,7 @@ def display_vocab(db)
 end
 
 def shuffle_method(db, list)
+	#shuffle method for use in two different tests for user
 	list.shuffle.each do |number, word, definition|
 		puts "#{number}. #{word}"
 		puts "What is the definition?"
@@ -133,7 +134,7 @@ end
 user_input = nil
 while user_input != "Q"
 	puts "What would you like to do? (or 'q' to quit)"
-	puts "Add\nChange word\nChange definition\nDelete\nDelete all\nDisplay\nTest\nTest redo"
+	puts "Add\nChange word\nChange definition\nDelete\nDelete all\nDisplay\nShuffle\nShuffle redo"
 	user_input = gets.chomp.capitalize
 
 	if user_input == "Q"
@@ -162,11 +163,11 @@ while user_input != "Q"
 		puts " "
 		plain_display_vocab(db)
 		puts " "
-	elsif user_input == "Test"
+	elsif user_input == "Shuffle"
 		puts " "
 		shuffle(db)
 		puts " "
-	elsif user_input == "Test redo"
+	elsif user_input == "Shuffle redo"
 		puts " "
 		shuffle_redo(db)
 		puts " "

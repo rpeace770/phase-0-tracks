@@ -102,12 +102,34 @@ def shuffle(db)
 		puts "What is the definition?"
 		user_definition = gets.chomp
 		puts "The real definition is: #{definition}"
+		#self-check for understanding
 		puts "Were you correct? (y/n)"
 		re_quiz = gets.chomp
 		db.execute("UPDATE nursing SET recognition=? WHERE id=?", [re_quiz, number])
 		puts " "
 	end
 	display_vocab(db)
+end
+
+def shuffle_redo(db)
+	#shuffle words that were not understood and test again
+	shuffle_list = db.execute("SELECT nursing.id, nursing.word, nursing.definition FROM nursing WHERE recognition!='y'")
+	shuffle_list.shuffle.each do |number, word, definition|
+		puts "#{number}. #{word}"
+		puts "What is the definition?"
+		user_definition = gets.chomp
+		puts "The real definition is: #{definition}"
+		#self-check for understanding
+		puts "Were you correct? (y/n)"
+		re_quiz = gets.chomp
+		db.execute("UPDATE nursing SET recognition=? WHERE id=?", [re_quiz, number])
+		puts " "
+	end
+	display_vocab(db)
+		#message to user if they know all the words
+		if shuffle_list.empty? == true
+			puts "You do not have any words to study!\n"
+		end
 end
 
 # print database information
@@ -118,7 +140,7 @@ end
 user_input = nil
 while user_input != "Q"
 	puts "What would you like to do? (or 'q' to quit)"
-	puts "Add\nChange word\nChange definition\nDelete\nDelete all\nDisplay\nTest"
+	puts "Add\nChange word\nChange definition\nDelete\nDelete all\nDisplay\nTest\nTest redo"
 	user_input = gets.chomp.capitalize
 
 	if user_input == "Q"
@@ -150,6 +172,10 @@ while user_input != "Q"
 	elsif user_input == "Test"
 		puts " "
 		shuffle(db)
+		puts " "
+	elsif user_input == "Test redo"
+		puts " "
+		shuffle_redo(db)
 		puts " "
 	else
 		puts " "

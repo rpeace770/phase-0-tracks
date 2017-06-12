@@ -94,10 +94,8 @@ def display_vocab(db)
 	end
 end
 
-def shuffle(db)
-	#shuffle vocab words and test user on knowledge
-	shuffle_list = db.execute("SELECT nursing.id, nursing.word, nursing.definition FROM nursing")
-	shuffle_list.shuffle.each do |number, word, definition|
+def shuffle_method(db, list)
+	list.shuffle.each do |number, word, definition|
 		puts "#{number}. #{word}"
 		puts "What is the definition?"
 		user_definition = gets.chomp
@@ -111,24 +109,19 @@ def shuffle(db)
 	display_vocab(db)
 end
 
+def shuffle(db)
+	#shuffle vocab words and test user on knowledge
+	shuffle_list = db.execute("SELECT nursing.id, nursing.word, nursing.definition FROM nursing")
+	shuffle_method(db, shuffle_list)
+end
+
 def shuffle_redo(db)
 	#shuffle words that were not understood and test again
 	shuffle_list = db.execute("SELECT nursing.id, nursing.word, nursing.definition FROM nursing WHERE recognition!='y'")
-	shuffle_list.shuffle.each do |number, word, definition|
-		puts "#{number}. #{word}"
-		puts "What is the definition?"
-		user_definition = gets.chomp
-		puts "The real definition is: #{definition}"
-		#self-check for understanding
-		puts "Were you correct? (y/n)"
-		re_quiz = gets.chomp
-		db.execute("UPDATE nursing SET recognition=? WHERE id=?", [re_quiz, number])
-		puts " "
-	end
-	display_vocab(db)
+	shuffle_method(db, shuffle_list)
 		#message to user if they know all the words
 		if shuffle_list.empty? == true
-			puts "You do not have any words to study!\n"
+			puts "\nYou do not have any words to study!\n"
 		end
 end
 

@@ -1,11 +1,11 @@
-.header {
+#header {
 	background-color: #00A67D;
 }
 
-.one {
+#one {
 	border: 1px solid black;
 }
 
-.two {
+#two {
 	border: 1px solid black;
 }

@@ -2,7 +2,6 @@ var one = document.getElementById("one");
 one.style.border = "10px solid blue";
 
 function textAlign(event) {
-	console.log(event);
 	event.target.style.textAlign = "center";
 }
 

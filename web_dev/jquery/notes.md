@@ -5,3 +5,4 @@
 4. Pick one concept to work on, work for 20 minutes, move on and come back if confused
 5. Take notes on what I've learned
 6. Brainstorm project ideas along the way
+

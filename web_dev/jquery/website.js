@@ -12,5 +12,4 @@
 
 // borders[1].addEventListener("mouseover", highlight);
 
-	var $newParagraph = $('<p>Inserting here</p>');
-	$('p:first').before($newParagraph);
+	$('p').before('<p>Inserting here</p>');

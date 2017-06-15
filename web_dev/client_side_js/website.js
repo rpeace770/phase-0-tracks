@@ -1,9 +1,13 @@
-var one = document.getElementById("one");
+var one = document.getElementById("header");
 one.style.border = "10px solid blue";
 
-function textAlign(event) {
-	event.target.style.textAlign = "center";
+var borders = document.querySelectorAll('p.one');
+for (var i = 0; i < borders.length; i++) {
+	borders[i].style.textAlign = "center";
 }
 
-var text = document.getElementById("two");
-text.addEventListener("click", textAlign);
+function highlight(event) {
+	event.target.style.borderColor = "red";
+}
+
+borders[1].addEventListener("mouseover", highlight);

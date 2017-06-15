@@ -51,7 +51,8 @@ get '/contact' do
   "123 Aftonshire Way, Austin, TX 78732"
 end
 
-#write a GET route that displays a person's name as query parameter
+# write a GET route that displays a person's name as query parameter
+# query parameter is in url as ?name=Rachel
 
 get '/great_job' do
   name = params[:name]
@@ -61,6 +62,36 @@ get '/great_job' do
     "Good job!"
   end
 end
+
+# write a GET route that uses route parameters to add two numbers and respond with result
+
+get '/add/:integer1/:integer2' do
+  integer1 = params[:integer1]
+  integer2 = params[:integer2]
+  result = integer1.to_i + integer2.to_i
+  "#{integer1} + #{integer2} = #{result}"
+end
+
+# Make a route that allows the user to search the database in some way
+
+get '/student/name' do
+  puts "Who do you want to search for?"
+  answer = gets.chomp
+  db.execute("SELECT students.name, students.campus FROM students WHERE students.name=?", [answer])
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

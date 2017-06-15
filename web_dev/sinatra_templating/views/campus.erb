@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chicago students</title>
+</head>
+<body>
+ <ul>
+ 		<% if @city == [] %>
+ 		<p>No students found.</p>
+ 		<% else %>
+    <% @city.each do |student| %>
+      <li><%= student['name'] %>, <%= student['campus'] %></li>
+    <% end %>
+    <% end %>
+ </ul>
+</body>
+</html>

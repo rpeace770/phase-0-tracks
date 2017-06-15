@@ -12,4 +12,4 @@
 
 // borders[1].addEventListener("mouseover", highlight);
 
-	$('p').before('<p>Inserting here</p>');
+	$('p:first').before('<p>Inserting here</p>');

@@ -74,10 +74,13 @@ end
 
 # Make a route that allows the user to search the database in some way
 
-get '/student/name' do
-  puts "Who do you want to search for?"
-  answer = gets.chomp
-  db.execute("SELECT students.name, students.campus FROM students WHERE students.name=?", [answer])
+get '/name' do
+  send_file 'form.html'
+end
+
+post '/name' do
+  ora = db.execute("SELECT students.name, students.campus FROM students WHERE students.name=?", params[:student])
+  ora[0]['name'].to_s
 end
 
 

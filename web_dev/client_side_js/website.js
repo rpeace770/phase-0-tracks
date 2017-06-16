@@ -22,10 +22,9 @@ function highlight(event) {
 
 borders[1].addEventListener("mouseover", highlight);
 
-//reveal animated gif
-
+//reveal picture
 function picture(event) {
-	var image = document.getElementById('');
+	var image = document.getElementById("cat");
 	image.style["display"] = "block";
 }
 

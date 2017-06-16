@@ -79,8 +79,8 @@ get '/name' do
 end
 
 post '/name' do
-  ora = db.execute("SELECT students.name, students.campus FROM students WHERE students.name=?", params[:student])
-  ora[0]['name'].to_s
+  student_name = db.execute("SELECT students.name, students.campus FROM students WHERE students.name=?", params[:student])
+  student_name[0]['name'].to_s + " attends the " + student_name[0]['campus'].to_s + " campus."
 end
 
 

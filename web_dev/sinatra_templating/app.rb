@@ -24,4 +24,24 @@ post '/students' do
   redirect '/'
 end
 
-# add static resources
+# delete students via form
+get '/students/delete' do
+  erb :delete_student
+end
+
+post '/delete' do
+  @ids = db.execute("SELECT id FROM students")
+  input_id = params['id'].to_i
+  @ids.each do |indiv_hash|
+    if input_id == indiv_hash['id']
+      db.execute("DELETE FROM students WHERE id=?", [input_id])
+    end
+  end
+  redirect '/'
+end
+
+# show students by campus
+get '/campus/:campus' do
+	@city = db.execute("SELECT * FROM students WHERE campus=?", params[:campus])
+	erb :campus
+end

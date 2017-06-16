@@ -6,3 +6,7 @@
 5. Take notes on what I've learned
 6. Brainstorm project ideas along the way
 
+###Results
+1. JQuery textbook and W3 Schools were the best resources for this project
+2. Pick one concept to work on and give it a time limit.
+3. Bookmarked pages in the textbook to find later.
